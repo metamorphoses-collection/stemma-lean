@@ -1,0 +1,24 @@
+% Macros and settings shared by the pdf and the web version.
+% The notation is that of the technical report
+% "Testing stemmata against the evidence: Technical report".
+
+% Numbered within chapters, one counter for all the environments that
+% appear in the dependency graph.
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+% Notation of the report.
+\newcommand{\X}{\mathcal{X}}          % the witnesses
+\newcommand{\T}{\Sigma^\star}         % the splits of the true stemma
+\newcommand{\F}{\mathcal{F}}          % the false splits of positive rate
+\renewcommand{\Pr}{\mathbb{P}}        % probability
+\newcommand{\E}{\mathbb{E}}           % expectation
+\newcommand{\comp}{\mathrel{\|}}      % compatibility of splits
+
+% Equations numbered within chapters, as in the report.
+\numberwithin{equation}{chapter}

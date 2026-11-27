@@ -1,0 +1,433 @@
+[
+ {
+  "label": "prop:buneman",
+  "number": "3.2",
+  "kind": "Proposition",
+  "title": "Buneman",
+  "theorems": [
+   "Stemma.Buneman.buneman"
+  ]
+ },
+ {
+  "label": "lem:facts",
+  "number": "3.3",
+  "kind": "Lemma",
+  "title": "Two counting facts",
+  "theorems": [
+   "Stemma.Splits.card_le"
+  ]
+ },
+ {
+  "label": "lem:exclusive",
+  "number": "3.5",
+  "kind": "Lemma",
+  "title": "Exclusivity",
+  "theorems": [
+   "Stemma.exclusivity"
+  ]
+ },
+ {
+  "label": "thm:universal",
+  "number": "4.1",
+  "kind": "Theorem",
+  "title": "Universality",
+  "theorems": [
+   "Stemma.Universal.universality"
+  ]
+ },
+ {
+  "label": "cor:nphard",
+  "number": "4.2",
+  "kind": "Corollary",
+  "title": "",
+  "theorems": [
+   "Stemma.NPHard.CompatibleSplits_npComplete",
+   "Stemma.NPHard.WeightedSplits_npComplete"
+  ]
+ },
+ {
+  "label": "prop:triple",
+  "number": "5.2",
+  "kind": "Proposition",
+  "title": "Pairs are exact, triples are not",
+  "theorems": [
+   "Stemma.pair_exact",
+   "Stemma.triple_not_joint"
+  ]
+ },
+ {
+  "label": "thm:cutting",
+  "number": "5.3",
+  "kind": "Theorem",
+  "title": "Exact selection by cutting planes",
+  "theorems": [
+   "Stemma.CuttingPlanes.cutting_correct"
+  ]
+ },
+ {
+  "label": "lem:hall",
+  "number": "6.1",
+  "kind": "Lemma",
+  "title": "Displacement matching",
+  "theorems": [
+   "Stemma.Splits.displacement_matching"
+  ]
+ },
+ {
+  "label": "thm:local",
+  "number": "6.2",
+  "kind": "Theorem",
+  "title": "Local separation",
+  "theorems": [
+   "Stemma.Splits.local_separation"
+  ]
+ },
+ {
+  "label": "thm:global",
+  "number": "6.3",
+  "kind": "Theorem",
+  "title": "Global separation",
+  "theorems": [
+   "Stemma.Splits.global_separation"
+  ]
+ },
+ {
+  "label": "prop:threshold",
+  "number": "6.9",
+  "kind": "Proposition",
+  "title": "Threshold for non-binary stemmata",
+  "theorems": [
+   "Stemma.Splits.threshold"
+  ]
+ },
+ {
+  "label": "prop:rooted",
+  "number": "6.10",
+  "kind": "Proposition",
+  "title": "Rooted analogue",
+  "theorems": [
+   "Stemma.Rooted.isBinR_iff_outgroup",
+   "Stemma.RootedConsistency.consistency_rooted"
+  ]
+ },
+ {
+  "label": "thm:pairwise",
+  "number": "7.1",
+  "kind": "Theorem",
+  "title": "Pairwise bound",
+  "theorems": [
+   "Stemma.Chernoff.pairwise_bound"
+  ]
+ },
+ {
+  "label": "lem:gamma",
+  "number": "7.3",
+  "kind": "Lemma",
+  "title": "Computing γ",
+  "theorems": [
+   "Stemma.Margin.computing_gamma"
+  ]
+ },
+ {
+  "label": "thm:consistency",
+  "number": "7.4",
+  "kind": "Theorem",
+  "title": "Consistency",
+  "theorems": [
+   "Stemma.Consistency.consistency",
+   "Stemma.Margin.inconsistency",
+   "Stemma.Bernstein.consistency_bernstein"
+  ]
+ },
+ {
+  "label": "cor:samplesize",
+  "number": "7.6",
+  "kind": "Corollary",
+  "title": "Sample size",
+  "theorems": [
+   "Stemma.Margin.sample_size"
+  ]
+ },
+ {
+  "label": "prop:blocks",
+  "number": "7.8",
+  "kind": "Proposition",
+  "title": "Dependent blocks",
+  "theorems": [
+   "Stemma.Blocks.dependent_blocks"
+  ]
+ },
+ {
+  "label": "thm:gammaconf",
+  "number": "7.9",
+  "kind": "Theorem",
+  "title": "Confidence bound for the margin",
+  "theorems": [
+   "Stemma.GammaConf.gamma_confidence"
+  ]
+ },
+ {
+  "label": "prop:gammablocks",
+  "number": "7.11",
+  "kind": "Proposition",
+  "title": "Certifying the margin with dependent units",
+  "theorems": [
+   "Stemma.GammaBlocks.gamma_confidence_blocks"
+  ]
+ },
+ {
+  "label": "thm:fragmentary",
+  "number": "7.12",
+  "kind": "Theorem",
+  "title": "Fragmentary witnesses",
+  "theorems": [
+   "Stemma.FragmentaryUnits.fragmentary_consistency"
+  ]
+ },
+ {
+  "label": "prop:textillegible",
+  "number": "7.13",
+  "kind": "Proposition",
+  "title": "Illegibility that depends on the text",
+  "theorems": [
+   "Stemma.TextIllegible.margin_pos"
+  ]
+ },
+ {
+  "label": "thm:cuttingconsistency",
+  "number": "7.14",
+  "kind": "Theorem",
+  "title": "Consistency of the cutting-plane estimator",
+  "theorems": [
+   "Stemma.Cutting.cutting_consistent",
+   "Stemma.CuttingIllegible.cutting_illegible_margin"
+  ]
+ },
+ {
+  "label": "prop:dimfree",
+  "number": "7.15",
+  "kind": "Proposition",
+  "title": "A tolerance independent of the number of witnesses",
+  "theorems": [
+   "Stemma.CuttingDimFree.four_parts",
+   "Stemma.CuttingDimFree.display_prob_le",
+   "Stemma.CuttingDimFree.display_prob_le_text",
+   "Stemma.CuttingDimFree.cutting_dimfree",
+   "Stemma.CuttingDimFree.cutting_dimfree_margin",
+   "Stemma.CuttingDimFree.cutting_text_margin"
+  ]
+ },
+ {
+  "label": "prop:bediereffect",
+  "number": "8.1",
+  "kind": "Proposition",
+  "title": "Bédier effect",
+  "theorems": [
+   "Stemma.Polytomy.bedier_effect"
+  ]
+ },
+ {
+  "label": "cor:tops",
+  "number": "8.2",
+  "kind": "Corollary",
+  "title": "Polytomies that survive",
+  "theorems": [
+   "Stemma.RootedTop.two_branched_top",
+   "Stemma.RootedTop.rooted_bedier_true"
+  ]
+ },
+ {
+  "label": "thm:bedier",
+  "number": "8.3",
+  "kind": "Theorem",
+  "title": "Bédier threshold",
+  "theorems": [
+   "Stemma.Chernoff.bedier_threshold"
+  ]
+ },
+ {
+  "label": "prop:gap",
+  "number": "8.4",
+  "kind": "Proposition",
+  "title": "Largest-gap threshold",
+  "theorems": [
+   "Stemma.GapThreshold.gap_separation",
+   "Stemma.GapThreshold.gap_threshold"
+  ]
+ },
+ {
+  "label": "prop:rival",
+  "number": "8.5",
+  "kind": "Proposition",
+  "title": "Rival test",
+  "theorems": [
+   "Stemma.Rival.rival"
+  ]
+ },
+ {
+  "label": "thm:mechanisms",
+  "number": "8.7",
+  "kind": "Theorem",
+  "title": "Mechanisms of false support",
+  "theorems": [
+   "Stemma.Mechanisms.retention_coincidence_report",
+   "Stemma.Mechanisms.overwrite_report"
+  ]
+ },
+ {
+  "label": "cor:dominance",
+  "number": "8.8",
+  "kind": "Corollary",
+  "title": "Comparison of the codings",
+  "theorems": [
+   "Stemma.Dominance.dominance",
+   "Stemma.Dominance.omega_dominance"
+  ]
+ },
+ {
+  "label": "prop:modelbounds",
+  "number": "8.10",
+  "kind": "Proposition",
+  "title": "Support bounds",
+  "theorems": [
+   "Stemma.Irreversible.suppI_edge_ge",
+   "Stemma.Irreversible.false_mass_sides"
+  ]
+ },
+ {
+  "label": "cor:modelglobal",
+  "number": "8.11",
+  "kind": "Corollary",
+  "title": "A sufficient condition",
+  "theorems": [
+   "Stemma.Irreversible.model_global",
+   "Stemma.Irreversible.model_consistency"
+  ]
+ },
+ {
+  "label": "prop:quartet",
+  "number": "8.12",
+  "kind": "Proposition",
+  "title": "Quartet",
+  "theorems": [
+   "Stemma.Quartet.m12",
+   "Stemma.Quartet.m13",
+   "Stemma.Quartet.m14"
+  ]
+ },
+ {
+  "label": "cor:lba",
+  "number": "8.13",
+  "kind": "Corollary",
+  "title": "Textual long-branch zone",
+  "theorems": [
+   "Stemma.Quartet.long_branch",
+   "Stemma.CodingLimit.long_branch_consistent",
+   "Stemma.CodingLimit.long_branch_inconsistent"
+  ]
+ },
+ {
+  "label": "thm:coding",
+  "number": "8.14",
+  "kind": "Theorem",
+  "title": "At leading order, coincidence enters only the rooted coding",
+  "theorems": [
+   "Stemma.CodingLimit.unrooted_consistency",
+   "Stemma.CodingLimit.rooted_inconsistency",
+   "Stemma.CodingLimit.unrooted_false_selected",
+   "Stemma.CodingLimit.rooted_consistency",
+   "Stemma.CodingLimit.rooted_selects_13"
+  ]
+ },
+ {
+  "label": "prop:drift",
+  "number": "8.15",
+  "kind": "Proposition",
+  "title": "Drift towards the root",
+  "theorems": [
+   "Stemma.Drift.drift_unrooted_consistency",
+   "Stemma.Drift.drift_unrooted_false",
+   "Stemma.Drift.drift_rooted_consistency",
+   "Stemma.Drift.drift_rooted_false"
+  ]
+ },
+ {
+  "label": "prop:tworeading",
+  "number": "8.16",
+  "kind": "Proposition",
+  "title": "Two-reading coding",
+  "theorems": [
+   "Stemma.TwoReading.two_reading_mechanisms",
+   "Stemma.TwoReading.two_reading_consistency",
+   "Stemma.TwoReading.two_reading_false_selected"
+  ]
+ },
+ {
+  "label": "prop:multistate",
+  "number": "8.17",
+  "kind": "Proposition",
+  "title": "Several attractive readings",
+  "theorems": [
+   "Stemma.MultiAttraction.transfer_PU",
+   "Stemma.MultiAttraction.transfer_PR",
+   "Stemma.MultiAttraction.dominanceG"
+  ]
+ },
+ {
+  "label": "prop:alpha",
+  "number": "8.18",
+  "kind": "Proposition",
+  "title": "Estimating α",
+  "theorems": [
+   "Stemma.Alpha.ratio_tendsto",
+   "Stemma.Alpha.alpha_pooled"
+  ]
+ },
+ {
+  "label": "prop:polytomynull",
+  "number": "8.19",
+  "kind": "Proposition",
+  "title": "Coincidence null at a polytomy",
+  "theorems": [
+   "Stemma.PolytomyNull.null_bound",
+   "Stemma.PolytomyMix.null_mixture"
+  ]
+ },
+ {
+  "label": "prop:size",
+  "number": "9.1",
+  "kind": "Proposition",
+  "title": "Size",
+  "theorems": [
+   "Stemma.Size.card_nontrivial"
+  ]
+ },
+ {
+  "label": "prop:crossing",
+  "number": "9.2",
+  "kind": "Proposition",
+  "title": "Crossing set",
+  "theorems": [
+   "Stemma.Crossing.crossing_iff"
+  ]
+ },
+ {
+  "label": "prop:five",
+  "number": "9.3",
+  "kind": "Proposition",
+  "title": "Five witnesses",
+  "theorems": [
+   "Stemma.Five.conflict_not_chordal",
+   "Stemma.Five.conflict_not_perfect"
+  ]
+ },
+ {
+  "label": "thm:fpt",
+  "number": "9.4",
+  "kind": "Theorem",
+  "title": "Fixed-parameter tractability in n",
+  "theorems": [
+   "Stemma.Dynamic.dp_correct"
+  ]
+ }
+]

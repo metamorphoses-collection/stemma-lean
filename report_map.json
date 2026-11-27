@@ -1,0 +1,4207 @@
+[
+ {
+  "label": "app:lean",
+  "labels": [],
+  "report_number": "C",
+  "report_numbers": [],
+  "entry_title": "How the report's objects are encoded",
+  "heading": "subsection",
+  "doc": "How the report's objects are encoded",
+  "file": [],
+  "decls": [
+   "Stemma.Compat",
+   "Stemma.PairwiseCompat",
+   "Stemma.weight",
+   "Stemma.IsOptimal",
+   "Stemma.Splits.Nontriv",
+   "Stemma.Splits.IsSide",
+   "Stemma.Splits.IsSystem",
+   "Stemma.Splits.IsBinary",
+   "Stemma.Splits.Laminar",
+   "Stemma.Splits.wt",
+   "Stemma.Splits.IsUniqueSolution",
+   "Phylogenetics.SplitsEquivalence.IsXTree",
+   "Phylogenetics.SplitsEquivalence.edgeSide",
+   "Phylogenetics.SplitsEquivalence.splitSides",
+   "Stemma.Buneman.fam",
+   "Stemma.Resolve.Inside",
+   "Stemma.Cutting.Restricts",
+   "Stemma.Cutting.Displays",
+   "Stemma.Cutting.NontrivP",
+   "Stemma.Cutting.JointlyCompletable",
+   "Stemma.Cutting.Resolvable",
+   "Stemma.Cutting.X",
+   "Stemma.Cutting.W",
+   "Stemma.Cutting.M",
+   "Stemma.CuttingPlanes.PairwiseOverlap",
+   "Stemma.CuttingPlanes.weight",
+   "Stemma.CuttingPlanes.Feasible",
+   "Stemma.CuttingPlanes.IsMasterOpt",
+   "Stemma.CuttingPlanes.ValidCuts",
+   "Stemma.CuttingPlanes.Run",
+   "Stemma.Rooted.Lam",
+   "Stemma.Rooted.IsCluster",
+   "Stemma.Rooted.IsHier",
+   "Stemma.Rooted.IsBinR",
+   "Stemma.Rooted.wtR",
+   "Stemma.Rooted.IsUniqueSolutionR",
+   "Stemma.Chernoff.conflictPairs",
+   "Stemma.Chernoff.kl",
+   "Stemma.Chernoff.falseOcc",
+   "Stemma.Chernoff.RestrictedUnique",
+   "Stemma.Margin.competitors",
+   "Stemma.Margin.ratio",
+   "Stemma.Margin.margin",
+   "Stemma.Margin.shift",
+   "Stemma.GammaConf.sides",
+   "Stemma.GammaConf.loMargin",
+   "Stemma.Fragmentary.legible",
+   "Stemma.Fragmentary.SameRestr",
+   "Stemma.Fragmentary.NontrivOn",
+   "Stemma.Fragmentary.ProposesRestr",
+   "Stemma.Fragmentary.mC",
+   "Stemma.Fragmentary.mR",
+   "Stemma.Five.P",
+   "Stemma.BinaryTree.IsBinaryTree",
+   "Stemma.Crossing.side",
+   "Stemma.Crossing.InSpan",
+   "Stemma.Dynamic.IsLam",
+   "Stemma.Dynamic.opt",
+   "Stemma.Dynamic.blocksF",
+   "Stemma.Dynamic.blocksP",
+   "Stemma.CuttingIllegible.canon",
+   "Stemma.CuttingIllegible.props",
+   "Stemma.CuttingIllegible.count",
+   "Stemma.CuttingIllegible.zs",
+   "Stemma.CuttingIllegible.unitProps",
+   "Stemma.CuttingIllegible.mu1",
+   "Stemma.CuttingIllegible.mu2",
+   "Stemma.FragmentaryUnits.UnitData",
+   "Stemma.FragmentaryUnits.g",
+   "Stemma.FragmentaryUnits.V",
+   "Stemma.FragmentaryUnits.Y",
+   "Stemma.FragmentaryUnits.mt",
+   "Stemma.Polytomy.IsChild",
+   "Stemma.Mechanisms.Rd",
+   "Stemma.Mechanisms.Lowest",
+   "Stemma.Mechanisms.read",
+   "Stemma.Mechanisms.cls",
+   "Stemma.Mechanisms.PropU",
+   "Stemma.Mechanisms.PropR",
+   "Stemma.Mechanisms.val",
+   "Stemma.CodingLimit.mU",
+   "Stemma.Attraction.attOf",
+   "Stemma.Attraction.wt",
+   "Stemma.Attraction.ex",
+   "Stemma.Attraction.P3",
+   "Stemma.Attraction.esymm",
+   "Stemma.Attraction.ClassDet",
+   "Stemma.Attraction.PU",
+   "Stemma.Attraction.PR",
+   "Stemma.Attraction.omega",
+   "Stemma.Attraction.Laminar",
+   "Stemma.Alpha.Isolated",
+   "Stemma.PolytomyNull.Vertex",
+   "Stemma.PolytomyNull.nonorig",
+   "Stemma.PolytomyNull.q",
+   "Stemma.PolytomyNull.lead",
+   "Stemma.PolytomyMix.sc",
+   "Stemma.ClopperPearson.cdf",
+   "Stemma.ClopperPearson.tail",
+   "Stemma.ClopperPearson.cpUpper",
+   "Stemma.ClopperPearson.cpLower",
+   "Stemma.ClopperPearson.supp",
+   "Stemma.Dynamic.localCost",
+   "Stemma.Dynamic.totalCost"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Compat",
+     "as_written": "Compat",
+     "keyword": "def",
+     "source": "Basic.lean"
+    },
+    {
+     "name": "Stemma.PairwiseCompat",
+     "as_written": "PairwiseCompat",
+     "keyword": "def",
+     "source": "Basic.lean"
+    },
+    {
+     "name": "Stemma.weight",
+     "as_written": "weight",
+     "keyword": "def",
+     "source": "Basic.lean"
+    },
+    {
+     "name": "Stemma.IsOptimal",
+     "as_written": "IsOptimal",
+     "keyword": "def",
+     "source": "Basic.lean"
+    },
+    {
+     "name": "Stemma.Splits.Nontriv",
+     "as_written": "Nontriv",
+     "keyword": "def",
+     "source": "Splits.lean"
+    },
+    {
+     "name": "Stemma.Splits.IsSide",
+     "as_written": "IsSide",
+     "keyword": "def",
+     "source": "Splits.lean"
+    },
+    {
+     "name": "Stemma.Splits.IsSystem",
+     "as_written": "IsSystem",
+     "keyword": "def",
+     "source": "Splits.lean"
+    },
+    {
+     "name": "Stemma.Splits.IsBinary",
+     "as_written": "IsBinary",
+     "keyword": "def",
+     "source": "Splits.lean"
+    },
+    {
+     "name": "Stemma.Splits.Laminar",
+     "as_written": "Laminar",
+     "keyword": "def",
+     "source": "Splits.lean"
+    },
+    {
+     "name": "Stemma.Splits.wt",
+     "as_written": "wt",
+     "keyword": "def",
+     "source": "Splits.lean"
+    },
+    {
+     "name": "Stemma.Splits.IsUniqueSolution",
+     "as_written": "IsUniqueSolution",
+     "keyword": "def",
+     "source": "Splits.lean"
+    }
+   ],
+   [
+    {
+     "name": "Phylogenetics.SplitsEquivalence.IsXTree",
+     "as_written": "IsXTree",
+     "keyword": "structure",
+     "source": "Vendor/SplitsEquivalence.lean"
+    },
+    {
+     "name": "Phylogenetics.SplitsEquivalence.edgeSide",
+     "as_written": "edgeSide",
+     "keyword": "def",
+     "source": "Vendor/SplitsEquivalence.lean"
+    },
+    {
+     "name": "Phylogenetics.SplitsEquivalence.splitSides",
+     "as_written": "splitSides",
+     "keyword": "def",
+     "source": "Vendor/SplitsEquivalence.lean"
+    },
+    {
+     "name": "Stemma.Buneman.fam",
+     "as_written": "fam",
+     "keyword": "def",
+     "source": "Buneman.lean"
+    },
+    {
+     "name": "Stemma.Resolve.Inside",
+     "as_written": "Inside",
+     "keyword": "def",
+     "source": "Resolve.lean"
+    },
+    {
+     "name": "Stemma.Cutting.Restricts",
+     "as_written": "Restricts",
+     "keyword": "def",
+     "source": "Cutting.lean"
+    },
+    {
+     "name": "Stemma.Cutting.Displays",
+     "as_written": "Displays",
+     "keyword": "def",
+     "source": "Cutting.lean"
+    },
+    {
+     "name": "Stemma.Cutting.NontrivP",
+     "as_written": "NontrivP",
+     "keyword": "def",
+     "source": "Cutting.lean"
+    },
+    {
+     "name": "Stemma.Cutting.JointlyCompletable",
+     "as_written": "JointlyCompletable",
+     "keyword": "def",
+     "source": "Cutting.lean"
+    },
+    {
+     "name": "Stemma.Cutting.Resolvable",
+     "as_written": "Resolvable",
+     "keyword": "def",
+     "source": "Cutting.lean"
+    },
+    {
+     "name": "Stemma.Cutting.X",
+     "as_written": "X",
+     "keyword": "def",
+     "source": "Cutting.lean"
+    },
+    {
+     "name": "Stemma.Cutting.W",
+     "as_written": "W",
+     "keyword": "def",
+     "source": "Cutting.lean"
+    },
+    {
+     "name": "Stemma.Cutting.M",
+     "as_written": "M",
+     "keyword": "def",
+     "source": "Cutting.lean"
+    },
+    {
+     "name": "Stemma.CuttingPlanes.PairwiseOverlap",
+     "as_written": "PairwiseOverlap",
+     "keyword": "def",
+     "source": "CuttingPlanes.lean"
+    },
+    {
+     "name": "Stemma.CuttingPlanes.weight",
+     "as_written": "weight",
+     "keyword": "def",
+     "source": "CuttingPlanes.lean"
+    },
+    {
+     "name": "Stemma.CuttingPlanes.Feasible",
+     "as_written": "Feasible",
+     "keyword": "def",
+     "source": "CuttingPlanes.lean"
+    },
+    {
+     "name": "Stemma.CuttingPlanes.IsMasterOpt",
+     "as_written": "IsMasterOpt",
+     "keyword": "def",
+     "source": "CuttingPlanes.lean"
+    },
+    {
+     "name": "Stemma.CuttingPlanes.ValidCuts",
+     "as_written": "ValidCuts",
+     "keyword": "def",
+     "source": "CuttingPlanes.lean"
+    },
+    {
+     "name": "Stemma.CuttingPlanes.Run",
+     "as_written": "Run",
+     "keyword": "structure",
+     "source": "CuttingPlanes.lean"
+    },
+    {
+     "name": "Stemma.Rooted.Lam",
+     "as_written": "Lam",
+     "keyword": "def",
+     "source": "Rooted.lean"
+    },
+    {
+     "name": "Stemma.Rooted.IsCluster",
+     "as_written": "IsCluster",
+     "keyword": "def",
+     "source": "Rooted.lean"
+    },
+    {
+     "name": "Stemma.Rooted.IsHier",
+     "as_written": "IsHier",
+     "keyword": "def",
+     "source": "Rooted.lean"
+    },
+    {
+     "name": "Stemma.Rooted.IsBinR",
+     "as_written": "IsBinR",
+     "keyword": "def",
+     "source": "Rooted.lean"
+    },
+    {
+     "name": "Stemma.Rooted.wtR",
+     "as_written": "wtR",
+     "keyword": "def",
+     "source": "Rooted.lean"
+    },
+    {
+     "name": "Stemma.Rooted.IsUniqueSolutionR",
+     "as_written": "IsUniqueSolutionR",
+     "keyword": "def",
+     "source": "Rooted.lean"
+    },
+    {
+     "name": "Stemma.Chernoff.conflictPairs",
+     "as_written": "conflictPairs",
+     "keyword": "def",
+     "source": "Chernoff.lean"
+    },
+    {
+     "name": "Stemma.Chernoff.kl",
+     "as_written": "kl",
+     "keyword": "def",
+     "source": "Chernoff.lean"
+    },
+    {
+     "name": "Stemma.Chernoff.falseOcc",
+     "as_written": "falseOcc",
+     "keyword": "def",
+     "source": "Chernoff.lean"
+    },
+    {
+     "name": "Stemma.Chernoff.RestrictedUnique",
+     "as_written": "RestrictedUnique",
+     "keyword": "def",
+     "source": "Chernoff.lean"
+    },
+    {
+     "name": "Stemma.Margin.competitors",
+     "as_written": "competitors",
+     "keyword": "def",
+     "source": "Margin.lean"
+    },
+    {
+     "name": "Stemma.Margin.ratio",
+     "as_written": "ratio",
+     "keyword": "def",
+     "source": "Margin.lean"
+    },
+    {
+     "name": "Stemma.Margin.margin",
+     "as_written": "margin",
+     "keyword": "def",
+     "source": "Margin.lean"
+    },
+    {
+     "name": "Stemma.Margin.shift",
+     "as_written": "shift",
+     "keyword": "def",
+     "source": "Margin.lean"
+    },
+    {
+     "name": "Stemma.GammaConf.sides",
+     "as_written": "sides",
+     "keyword": "def",
+     "source": "GammaConf.lean"
+    },
+    {
+     "name": "Stemma.GammaConf.loMargin",
+     "as_written": "loMargin",
+     "keyword": "def",
+     "source": "GammaConf.lean"
+    },
+    {
+     "name": "Stemma.Fragmentary.legible",
+     "as_written": "legible",
+     "keyword": "def",
+     "source": "Fragmentary.lean"
+    },
+    {
+     "name": "Stemma.Fragmentary.SameRestr",
+     "as_written": "SameRestr",
+     "keyword": "def",
+     "source": "Fragmentary.lean"
+    },
+    {
+     "name": "Stemma.Fragmentary.NontrivOn",
+     "as_written": "NontrivOn",
+     "keyword": "def",
+     "source": "Fragmentary.lean"
+    },
+    {
+     "name": "Stemma.Fragmentary.ProposesRestr",
+     "as_written": "ProposesRestr",
+     "keyword": "def",
+     "source": "Fragmentary.lean"
+    },
+    {
+     "name": "Stemma.Fragmentary.mC",
+     "as_written": "mC",
+     "keyword": "def",
+     "source": "Fragmentary.lean"
+    },
+    {
+     "name": "Stemma.Fragmentary.mR",
+     "as_written": "mR",
+     "keyword": "def",
+     "source": "Fragmentary.lean"
+    },
+    {
+     "name": "Stemma.Five.P",
+     "as_written": "P",
+     "keyword": "def",
+     "source": "Five.lean"
+    },
+    {
+     "name": "Stemma.BinaryTree.IsBinaryTree",
+     "as_written": "IsBinaryTree",
+     "keyword": "structure",
+     "source": "BinaryTree.lean"
+    }
+   ],
+   [
+    {
+     "name": "Stemma.Crossing.side",
+     "as_written": "side",
+     "keyword": "def",
+     "source": "Crossing.lean"
+    },
+    {
+     "name": "Stemma.Crossing.InSpan",
+     "as_written": "InSpan",
+     "keyword": "def",
+     "source": "Crossing.lean"
+    },
+    {
+     "name": "Stemma.Dynamic.IsLam",
+     "as_written": "IsLam",
+     "keyword": "def",
+     "source": "Dynamic.lean"
+    },
+    {
+     "name": "Stemma.Dynamic.opt",
+     "as_written": "opt",
+     "keyword": "def",
+     "source": "Dynamic.lean"
+    },
+    {
+     "name": "Stemma.Dynamic.blocksF",
+     "as_written": "blocksF",
+     "keyword": "def",
+     "source": "Dynamic.lean"
+    },
+    {
+     "name": "Stemma.Dynamic.blocksP",
+     "as_written": "blocksP",
+     "keyword": "def",
+     "source": "Dynamic.lean"
+    },
+    {
+     "name": "Stemma.CuttingIllegible.canon",
+     "as_written": "canon",
+     "keyword": "def",
+     "source": "CuttingIllegible.lean"
+    },
+    {
+     "name": "Stemma.CuttingIllegible.props",
+     "as_written": "props",
+     "keyword": "def",
+     "source": "CuttingIllegible.lean"
+    },
+    {
+     "name": "Stemma.CuttingIllegible.count",
+     "as_written": "count",
+     "keyword": "def",
+     "source": "CuttingIllegible.lean"
+    },
+    {
+     "name": "Stemma.CuttingIllegible.zs",
+     "as_written": "zs",
+     "keyword": "def",
+     "source": "CuttingIllegible.lean"
+    },
+    {
+     "name": "Stemma.CuttingIllegible.unitProps",
+     "as_written": "unitProps",
+     "keyword": "def",
+     "source": "CuttingIllegible.lean"
+    },
+    {
+     "name": "Stemma.CuttingIllegible.mu1",
+     "as_written": "mu1",
+     "keyword": "def",
+     "source": "CuttingIllegible.lean"
+    },
+    {
+     "name": "Stemma.CuttingIllegible.mu2",
+     "as_written": "mu2",
+     "keyword": "def",
+     "source": "CuttingIllegible.lean"
+    },
+    {
+     "name": "Stemma.FragmentaryUnits.UnitData",
+     "as_written": "UnitData",
+     "keyword": "abbrev",
+     "source": "FragmentaryUnits.lean"
+    },
+    {
+     "name": "Stemma.FragmentaryUnits.g",
+     "as_written": "g",
+     "keyword": "def",
+     "source": "FragmentaryUnits.lean"
+    },
+    {
+     "name": "Stemma.FragmentaryUnits.V",
+     "as_written": "V",
+     "keyword": "def",
+     "source": "FragmentaryUnits.lean"
+    },
+    {
+     "name": "Stemma.FragmentaryUnits.Y",
+     "as_written": "Y",
+     "keyword": "def",
+     "source": "FragmentaryUnits.lean"
+    },
+    {
+     "name": "Stemma.FragmentaryUnits.mt",
+     "as_written": "mt",
+     "keyword": "def",
+     "source": "FragmentaryUnits.lean"
+    },
+    {
+     "name": "Stemma.Polytomy.IsChild",
+     "as_written": "IsChild",
+     "keyword": "def",
+     "source": "Polytomy.lean"
+    },
+    {
+     "name": "Stemma.Mechanisms.Rd",
+     "as_written": "Rd",
+     "keyword": "inductive",
+     "source": "Mechanisms.lean"
+    },
+    {
+     "name": "Stemma.Mechanisms.Lowest",
+     "as_written": "Lowest",
+     "keyword": "def",
+     "source": "Mechanisms.lean"
+    },
+    {
+     "name": "Stemma.Mechanisms.read",
+     "as_written": "read",
+     "keyword": "def",
+     "source": "Mechanisms.lean"
+    },
+    {
+     "name": "Stemma.Mechanisms.cls",
+     "as_written": "cls",
+     "keyword": "def",
+     "source": "Mechanisms.lean"
+    },
+    {
+     "name": "Stemma.Mechanisms.PropU",
+     "as_written": "PropU",
+     "keyword": "def",
+     "source": "Mechanisms.lean"
+    },
+    {
+     "name": "Stemma.Mechanisms.PropR",
+     "as_written": "PropR",
+     "keyword": "def",
+     "source": "Mechanisms.lean"
+    },
+    {
+     "name": "Stemma.Mechanisms.val",
+     "as_written": "val",
+     "keyword": "def",
+     "source": "Mechanisms.lean"
+    },
+    {
+     "name": "Stemma.CodingLimit.mU",
+     "as_written": "mU",
+     "keyword": "def",
+     "source": "CodingLimit.lean"
+    }
+   ],
+   [
+    {
+     "name": "Stemma.Attraction.attOf",
+     "as_written": "attOf",
+     "keyword": "def",
+     "source": "Attraction.lean"
+    },
+    {
+     "name": "Stemma.Attraction.wt",
+     "as_written": "wt",
+     "keyword": "def",
+     "source": "Attraction.lean"
+    },
+    {
+     "name": "Stemma.Attraction.ex",
+     "as_written": "ex",
+     "keyword": "def",
+     "source": "Attraction.lean"
+    },
+    {
+     "name": "Stemma.Attraction.P3",
+     "as_written": "P3",
+     "keyword": "def",
+     "source": "Attraction.lean"
+    },
+    {
+     "name": "Stemma.Attraction.esymm",
+     "as_written": "esymm",
+     "keyword": "def",
+     "source": "Attraction.lean"
+    },
+    {
+     "name": "Stemma.Attraction.ClassDet",
+     "as_written": "ClassDet",
+     "keyword": "def",
+     "source": "Attraction.lean"
+    },
+    {
+     "name": "Stemma.Attraction.PU",
+     "as_written": "PU",
+     "keyword": "def",
+     "source": "Attraction.lean"
+    },
+    {
+     "name": "Stemma.Attraction.PR",
+     "as_written": "PR",
+     "keyword": "def",
+     "source": "Attraction.lean"
+    },
+    {
+     "name": "Stemma.Attraction.omega",
+     "as_written": "omega",
+     "keyword": "def",
+     "source": "Attraction.lean"
+    },
+    {
+     "name": "Stemma.Attraction.Laminar",
+     "as_written": "Laminar",
+     "keyword": "def",
+     "source": "Attraction.lean"
+    },
+    {
+     "name": "Stemma.Alpha.Isolated",
+     "as_written": "Isolated",
+     "keyword": "def",
+     "source": "Alpha.lean"
+    },
+    {
+     "name": "Stemma.PolytomyNull.Vertex",
+     "as_written": "Vertex",
+     "keyword": "structure",
+     "source": "PolytomyNull.lean"
+    },
+    {
+     "name": "Stemma.PolytomyNull.nonorig",
+     "as_written": "nonorig",
+     "keyword": "def",
+     "source": "PolytomyNull.lean"
+    },
+    {
+     "name": "Stemma.PolytomyNull.q",
+     "as_written": "q",
+     "keyword": "def",
+     "source": "PolytomyNull.lean"
+    },
+    {
+     "name": "Stemma.PolytomyNull.lead",
+     "as_written": "lead",
+     "keyword": "def",
+     "source": "PolytomyNull.lean"
+    },
+    {
+     "name": "Stemma.PolytomyMix.sc",
+     "as_written": "sc",
+     "keyword": "def",
+     "source": "PolytomyMix.lean"
+    },
+    {
+     "name": "Stemma.ClopperPearson.cdf",
+     "as_written": "cdf",
+     "keyword": "def",
+     "source": "ClopperPearson.lean"
+    },
+    {
+     "name": "Stemma.ClopperPearson.tail",
+     "as_written": "tail",
+     "keyword": "def",
+     "source": "ClopperPearson.lean"
+    },
+    {
+     "name": "Stemma.ClopperPearson.cpUpper",
+     "as_written": "cpUpper",
+     "keyword": "def",
+     "source": "ClopperPearson.lean"
+    },
+    {
+     "name": "Stemma.ClopperPearson.cpLower",
+     "as_written": "cpLower",
+     "keyword": "def",
+     "source": "ClopperPearson.lean"
+    },
+    {
+     "name": "Stemma.ClopperPearson.supp",
+     "as_written": "supp",
+     "keyword": "def",
+     "source": "ClopperPearson.lean"
+    },
+    {
+     "name": "Stemma.Dynamic.localCost",
+     "as_written": "localCost",
+     "keyword": "def",
+     "source": "Dynamic.lean"
+    },
+    {
+     "name": "Stemma.Dynamic.totalCost",
+     "as_written": "totalCost",
+     "keyword": "def",
+     "source": "Dynamic.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:buneman",
+  "labels": [
+   "prop:buneman"
+  ],
+  "report_number": "3.2",
+  "report_numbers": [
+   "3.2"
+  ],
+  "entry_title": "Proposition~\\ref{prop:buneman} (Buneman's theorem)",
+  "heading": "subsubsection",
+  "doc": "Proposition 3.2 (Buneman's theorem)",
+  "file": [
+   "Buneman.lean",
+   "Vendor/SplitsEquivalence.lean",
+   "Vendor/XTree.lean"
+  ],
+  "decls": [
+   "Stemma.Buneman.buneman",
+   "Stemma.Buneman.nontrivial_splits_of_tree",
+   "Stemma.Buneman.buneman_unique",
+   "Phylogenetics.SplitsEquivalence.exists_xTree_iff",
+   "Phylogenetics.SplitsEquivalence.xTree_unique"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Buneman.buneman",
+     "as_written": "buneman",
+     "keyword": "theorem",
+     "source": "Buneman.lean"
+    },
+    {
+     "name": "Stemma.Buneman.nontrivial_splits_of_tree",
+     "as_written": "nontrivial_splits_of_tree",
+     "keyword": "theorem",
+     "source": "Buneman.lean"
+    },
+    {
+     "name": "Stemma.Buneman.buneman_unique",
+     "as_written": "buneman_unique",
+     "keyword": "theorem",
+     "source": "Buneman.lean"
+    },
+    {
+     "name": "Phylogenetics.SplitsEquivalence.exists_xTree_iff",
+     "as_written": "exists_xTree_iff",
+     "keyword": "theorem",
+     "source": "Vendor/SplitsEquivalence.lean"
+    },
+    {
+     "name": "Phylogenetics.SplitsEquivalence.xTree_unique",
+     "as_written": "xTree_unique",
+     "keyword": "theorem",
+     "source": "Vendor/SplitsEquivalence.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "lem:facts",
+  "labels": [
+   "lem:facts"
+  ],
+  "report_number": "3.3",
+  "report_numbers": [
+   "3.3"
+  ],
+  "entry_title": "Lemma~\\ref{lem:facts}",
+  "heading": "subsubsection",
+  "doc": "Lemma 3.3",
+  "file": [
+   "Splits.lean"
+  ],
+  "decls": [
+   "Stemma.Splits.card_le",
+   "Stemma.Splits.maximal"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Splits.card_le",
+     "as_written": "card_le",
+     "keyword": "theorem",
+     "source": "Splits.lean"
+    },
+    {
+     "name": "Stemma.Splits.maximal",
+     "as_written": "maximal",
+     "keyword": "theorem",
+     "source": "Splits.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "lem:facts",
+  "labels": [
+   "lem:facts"
+  ],
+  "report_number": "3.3",
+  "report_numbers": [
+   "3.3"
+  ],
+  "entry_title": "Lemma~\\ref{lem:facts}(ii), first half (binary trees)",
+  "heading": "subsubsection",
+  "doc": "Lemma 3.3(ii), first half (binary trees)",
+  "file": [
+   "BinaryTree.lean"
+  ],
+  "decls": [
+   "Stemma.BinaryTree.IsBinaryTree",
+   "Stemma.BinaryTree.nsplits",
+   "Stemma.BinaryTree.binary_tree_splits",
+   "Stemma.BinaryTree.isBinaryTree_of_fam",
+   "Stemma.BinaryTree.isBinary_iff_binary_tree"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.BinaryTree.IsBinaryTree",
+     "as_written": "IsBinaryTree",
+     "keyword": "structure",
+     "source": "BinaryTree.lean"
+    },
+    {
+     "name": "Stemma.BinaryTree.nsplits",
+     "as_written": "nsplits",
+     "keyword": "def",
+     "source": "BinaryTree.lean"
+    },
+    {
+     "name": "Stemma.BinaryTree.binary_tree_splits",
+     "as_written": "binary_tree_splits",
+     "keyword": "theorem",
+     "source": "BinaryTree.lean"
+    },
+    {
+     "name": "Stemma.BinaryTree.isBinaryTree_of_fam",
+     "as_written": "isBinaryTree_of_fam",
+     "keyword": "theorem",
+     "source": "BinaryTree.lean"
+    },
+    {
+     "name": "Stemma.BinaryTree.isBinary_iff_binary_tree",
+     "as_written": "isBinary_iff_binary_tree",
+     "keyword": "theorem",
+     "source": "BinaryTree.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": null,
+  "labels": [],
+  "report_number": null,
+  "report_numbers": [],
+  "entry_title": "Resolution of a system to $n-3$ splits",
+  "heading": "subsubsection",
+  "doc": "Resolution of a system to $n-3$ splits",
+  "file": [
+   "Resolve.lean"
+  ],
+  "decls": [
+   "Stemma.Resolve.laminar_extend",
+   "Stemma.Resolve.resolvable"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Resolve.laminar_extend",
+     "as_written": "laminar_extend",
+     "keyword": "theorem",
+     "source": "Resolve.lean"
+    },
+    {
+     "name": "Stemma.Resolve.resolvable",
+     "as_written": "resolvable",
+     "keyword": "theorem",
+     "source": "Resolve.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "lem:exclusive",
+  "labels": [
+   "lem:exclusive"
+  ],
+  "report_number": "3.5",
+  "report_numbers": [
+   "3.5"
+  ],
+  "entry_title": "Lemma~\\ref{lem:exclusive} (exclusivity)",
+  "heading": "subsubsection",
+  "doc": "Lemma 3.5 (exclusivity)",
+  "file": [
+   "Basic.lean"
+  ],
+  "decls": [
+   "Stemma.exclusivity"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.exclusivity",
+     "as_written": "exclusivity",
+     "keyword": "theorem",
+     "source": "Basic.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "lem:exclusive",
+  "labels": [
+   "lem:exclusive"
+  ],
+  "report_number": "3.5",
+  "report_numbers": [
+   "3.5"
+  ],
+  "entry_title": "Lemma~\\ref{lem:exclusive}, for the fibres of a reading map",
+  "heading": "subsubsection",
+  "doc": "Lemma 3.5, for the fibres of a reading map",
+  "file": [
+   "Basic.lean"
+  ],
+  "decls": [
+   "Stemma.exclusivity_fibres"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.exclusivity_fibres",
+     "as_written": "exclusivity_fibres",
+     "keyword": "theorem",
+     "source": "Basic.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "thm:universal",
+  "labels": [
+   "thm:universal",
+   "cor:nphard"
+  ],
+  "report_number": "4.1",
+  "report_numbers": [
+   "4.1",
+   "4.2"
+  ],
+  "entry_title": "Theorem~\\ref{thm:universal} and Corollary~\\ref{cor:nphard}",
+  "heading": "subsubsection",
+  "doc": "Theorem 4.1 and Corollary 4.2",
+  "file": [
+   "Universal.lean"
+  ],
+  "decls": [
+   "Stemma.Universal.universality"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Universal.universality",
+     "as_written": "universality",
+     "keyword": "theorem",
+     "source": "Universal.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "cor:nphard",
+  "labels": [
+   "cor:nphard"
+  ],
+  "report_number": "4.2",
+  "report_numbers": [
+   "4.2"
+  ],
+  "entry_title": "Corollary~\\ref{cor:nphard}, the reduction",
+  "heading": "subsubsection",
+  "doc": "Corollary 4.2, the reduction",
+  "file": [
+   "Reduction.lean"
+  ],
+  "decls": [
+   "Stemma.Reduction.N",
+   "Stemma.Reduction.σ",
+   "Stemma.Reduction.wt",
+   "Stemma.Reduction.decode",
+   "Stemma.Reduction.IsMWIS",
+   "Stemma.Reduction.reduction_mwis",
+   "Stemma.Reduction.decode_optimal",
+   "Stemma.Reduction.instance_size",
+   "Stemma.Reduction.encodeCost",
+   "Stemma.Reduction.encode_cost_le",
+   "Stemma.Reduction.Solver",
+   "Stemma.Reduction.transfer",
+   "Stemma.Reduction.transfer_poly",
+   "Stemma.Reduction.IsSplitConflict",
+   "Stemma.Reduction.every_graph_split_conflict",
+   "Stemma.Reduction.class_contains_all"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Reduction.N",
+     "as_written": "N",
+     "keyword": "def",
+     "source": "Reduction.lean"
+    },
+    {
+     "name": "Stemma.Reduction.σ",
+     "as_written": "σ",
+     "keyword": "def",
+     "source": "Reduction.lean"
+    },
+    {
+     "name": "Stemma.Reduction.wt",
+     "as_written": "wt",
+     "keyword": "def",
+     "source": "Reduction.lean"
+    },
+    {
+     "name": "Stemma.Reduction.decode",
+     "as_written": "decode",
+     "keyword": "def",
+     "source": "Reduction.lean"
+    },
+    {
+     "name": "Stemma.Reduction.IsMWIS",
+     "as_written": "IsMWIS",
+     "keyword": "def",
+     "source": "Reduction.lean"
+    },
+    {
+     "name": "Stemma.Reduction.reduction_mwis",
+     "as_written": "reduction_mwis",
+     "keyword": "theorem",
+     "source": "Reduction.lean"
+    },
+    {
+     "name": "Stemma.Reduction.decode_optimal",
+     "as_written": "decode_optimal",
+     "keyword": "theorem",
+     "source": "Reduction.lean"
+    },
+    {
+     "name": "Stemma.Reduction.instance_size",
+     "as_written": "instance_size",
+     "keyword": "theorem",
+     "source": "Reduction.lean"
+    },
+    {
+     "name": "Stemma.Reduction.encodeCost",
+     "as_written": "encodeCost",
+     "keyword": "def",
+     "source": "Reduction.lean"
+    },
+    {
+     "name": "Stemma.Reduction.encode_cost_le",
+     "as_written": "encode_cost_le",
+     "keyword": "theorem",
+     "source": "Reduction.lean"
+    },
+    {
+     "name": "Stemma.Reduction.Solver",
+     "as_written": "Solver",
+     "keyword": "structure",
+     "source": "Reduction.lean"
+    },
+    {
+     "name": "Stemma.Reduction.transfer",
+     "as_written": "transfer",
+     "keyword": "theorem",
+     "source": "Reduction.lean"
+    },
+    {
+     "name": "Stemma.Reduction.transfer_poly",
+     "as_written": "transfer_poly",
+     "keyword": "theorem",
+     "source": "Reduction.lean"
+    },
+    {
+     "name": "Stemma.Reduction.IsSplitConflict",
+     "as_written": "IsSplitConflict",
+     "keyword": "def",
+     "source": "Reduction.lean"
+    },
+    {
+     "name": "Stemma.Reduction.every_graph_split_conflict",
+     "as_written": "every_graph_split_conflict",
+     "keyword": "theorem",
+     "source": "Reduction.lean"
+    },
+    {
+     "name": "Stemma.Reduction.class_contains_all",
+     "as_written": "class_contains_all",
+     "keyword": "theorem",
+     "source": "Reduction.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "cor:nphard",
+  "labels": [
+   "cor:nphard"
+  ],
+  "report_number": "4.2",
+  "report_numbers": [
+   "4.2"
+  ],
+  "entry_title": "Corollary~\\ref{cor:nphard} (NP-completeness), Turing-machine polynomial time",
+  "heading": "subsubsection",
+  "doc": "Corollary 4.2 (NP-completeness), Turing-machine polynomial time",
+  "file": [
+   "NPComplete.lean",
+   "NPHard.lean",
+   "Reduction.lean"
+  ],
+  "decls": [
+   "Stemma.NPHard.SplitInstance",
+   "Stemma.NPHard.CompatU",
+   "Stemma.NPHard.CompatibleSplits",
+   "Stemma.NPHard.toSplits",
+   "Stemma.NPHard.toSplits_polyTime",
+   "Stemma.NPHard.toSplits_mem_iff",
+   "Stemma.NPHard.polyTimeReducible_IndependentSet_CompatibleSplits",
+   "Stemma.NPHard.CompatibleSplits_npHard",
+   "Stemma.NPHard.OK",
+   "Stemma.NPHard.compatibleSplits_eq",
+   "Stemma.NPHard.CompatibleSplits_mem_NP",
+   "Stemma.NPHard.CompatibleSplits_npComplete",
+   "Stemma.NPHard.WSplitInstance",
+   "Stemma.NPHard.WeightedSplits",
+   "Stemma.NPHard.WeightedSplits_mem_NP",
+   "Stemma.NPHard.toW",
+   "Stemma.NPHard.toW_polyTime",
+   "Stemma.NPHard.toW_mem_iff",
+   "Stemma.NPHard.polyTimeReducible_CompatibleSplits_WeightedSplits",
+   "Stemma.NPHard.WeightedSplits_npHard",
+   "Stemma.NPHard.WeightedSplits_npComplete",
+   "Stemma.NPHard.WFsplit",
+   "Stemma.NPHard.WF",
+   "Stemma.NPHard.HasCompatible",
+   "Stemma.NPHard.malformed_not_mem",
+   "Stemma.NPHard.toSplits_wf",
+   "Stemma.NPHard.wfS_iff",
+   "Stemma.NPHard.checkU_iff",
+   "Stemma.NPHard.WFW",
+   "Stemma.NPHard.wfW_iff",
+   "Stemma.NPHard.checkW_iff",
+   "Stemma.Reduction.encodeCost",
+   "Stemma.Reduction.decodeCost",
+   "Stemma.Reduction.encode_cost_le"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.NPHard.SplitInstance",
+     "as_written": "SplitInstance",
+     "keyword": "structure",
+     "source": "NPHard.lean"
+    },
+    {
+     "name": "Stemma.NPHard.CompatU",
+     "as_written": "CompatU",
+     "keyword": "def",
+     "source": "NPHard.lean"
+    },
+    {
+     "name": "Stemma.NPHard.CompatibleSplits",
+     "as_written": "CompatibleSplits",
+     "keyword": "def",
+     "source": "NPHard.lean"
+    },
+    {
+     "name": "Stemma.NPHard.toSplits",
+     "as_written": "toSplits",
+     "keyword": "def",
+     "source": "NPHard.lean"
+    },
+    {
+     "name": "Stemma.NPHard.toSplits_polyTime",
+     "as_written": "toSplits_polyTime",
+     "keyword": "theorem",
+     "source": "NPHard.lean"
+    },
+    {
+     "name": "Stemma.NPHard.toSplits_mem_iff",
+     "as_written": "toSplits_mem_iff",
+     "keyword": "theorem",
+     "source": "NPHard.lean"
+    },
+    {
+     "name": "Stemma.NPHard.polyTimeReducible_IndependentSet_CompatibleSplits",
+     "as_written": "polyTimeReducible_IndependentSet_CompatibleSplits",
+     "keyword": "theorem",
+     "source": "NPHard.lean"
+    },
+    {
+     "name": "Stemma.NPHard.CompatibleSplits_npHard",
+     "as_written": "CompatibleSplits_npHard",
+     "keyword": "theorem",
+     "source": "NPHard.lean"
+    },
+    {
+     "name": "Stemma.NPHard.OK",
+     "as_written": "OK",
+     "keyword": "def",
+     "source": "NPComplete.lean"
+    },
+    {
+     "name": "Stemma.NPHard.compatibleSplits_eq",
+     "as_written": "compatibleSplits_eq",
+     "keyword": "theorem",
+     "source": "NPComplete.lean"
+    },
+    {
+     "name": "Stemma.NPHard.CompatibleSplits_mem_NP",
+     "as_written": "CompatibleSplits_mem_NP",
+     "keyword": "theorem",
+     "source": "NPComplete.lean"
+    },
+    {
+     "name": "Stemma.NPHard.CompatibleSplits_npComplete",
+     "as_written": "CompatibleSplits_npComplete",
+     "keyword": "theorem",
+     "source": "NPComplete.lean"
+    },
+    {
+     "name": "Stemma.NPHard.WSplitInstance",
+     "as_written": "WSplitInstance",
+     "keyword": "structure",
+     "source": "NPComplete.lean"
+    },
+    {
+     "name": "Stemma.NPHard.WeightedSplits",
+     "as_written": "WeightedSplits",
+     "keyword": "def",
+     "source": "NPComplete.lean"
+    },
+    {
+     "name": "Stemma.NPHard.WeightedSplits_mem_NP",
+     "as_written": "WeightedSplits_mem_NP",
+     "keyword": "theorem",
+     "source": "NPComplete.lean"
+    },
+    {
+     "name": "Stemma.NPHard.toW",
+     "as_written": "toW",
+     "keyword": "def",
+     "source": "NPComplete.lean"
+    },
+    {
+     "name": "Stemma.NPHard.toW_polyTime",
+     "as_written": "toW_polyTime",
+     "keyword": "theorem",
+     "source": "NPComplete.lean"
+    },
+    {
+     "name": "Stemma.NPHard.toW_mem_iff",
+     "as_written": "toW_mem_iff",
+     "keyword": "theorem",
+     "source": "NPComplete.lean"
+    },
+    {
+     "name": "Stemma.NPHard.polyTimeReducible_CompatibleSplits_WeightedSplits",
+     "as_written": "polyTimeReducible_CompatibleSplits_WeightedSplits",
+     "keyword": "theorem",
+     "source": "NPComplete.lean"
+    },
+    {
+     "name": "Stemma.NPHard.WeightedSplits_npHard",
+     "as_written": "WeightedSplits_npHard",
+     "keyword": "theorem",
+     "source": "NPComplete.lean"
+    },
+    {
+     "name": "Stemma.NPHard.WeightedSplits_npComplete",
+     "as_written": "WeightedSplits_npComplete",
+     "keyword": "theorem",
+     "source": "NPComplete.lean"
+    },
+    {
+     "name": "Stemma.NPHard.WFsplit",
+     "as_written": "WFsplit",
+     "keyword": "def",
+     "source": "NPHard.lean"
+    },
+    {
+     "name": "Stemma.NPHard.WF",
+     "as_written": "WF",
+     "keyword": "def",
+     "source": "NPHard.lean"
+    },
+    {
+     "name": "Stemma.NPHard.HasCompatible",
+     "as_written": "HasCompatible",
+     "keyword": "def",
+     "source": "NPHard.lean"
+    },
+    {
+     "name": "Stemma.NPHard.malformed_not_mem",
+     "as_written": "malformed_not_mem",
+     "keyword": "theorem",
+     "source": "NPHard.lean"
+    },
+    {
+     "name": "Stemma.NPHard.toSplits_wf",
+     "as_written": "toSplits_wf",
+     "keyword": "theorem",
+     "source": "NPHard.lean"
+    },
+    {
+     "name": "Stemma.NPHard.wfS_iff",
+     "as_written": "wfS_iff",
+     "keyword": "theorem",
+     "source": "NPComplete.lean"
+    },
+    {
+     "name": "Stemma.NPHard.checkU_iff",
+     "as_written": "checkU_iff",
+     "keyword": "theorem",
+     "source": "NPComplete.lean"
+    },
+    {
+     "name": "Stemma.NPHard.WFW",
+     "as_written": "WFW",
+     "keyword": "def",
+     "source": "NPComplete.lean"
+    },
+    {
+     "name": "Stemma.NPHard.wfW_iff",
+     "as_written": "wfW_iff",
+     "keyword": "theorem",
+     "source": "NPComplete.lean"
+    },
+    {
+     "name": "Stemma.NPHard.checkW_iff",
+     "as_written": "checkW_iff",
+     "keyword": "theorem",
+     "source": "NPComplete.lean"
+    },
+    {
+     "name": "Stemma.Reduction.encodeCost",
+     "as_written": "encodeCost",
+     "keyword": "def",
+     "source": "Reduction.lean"
+    },
+    {
+     "name": "Stemma.Reduction.decodeCost",
+     "as_written": "decodeCost",
+     "keyword": "def",
+     "source": "Reduction.lean"
+    },
+    {
+     "name": "Stemma.Reduction.encode_cost_le",
+     "as_written": "encode_cost_le",
+     "keyword": "theorem",
+     "source": "Reduction.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:triple",
+  "labels": [
+   "prop:triple"
+  ],
+  "report_number": "5.2",
+  "report_numbers": [
+   "5.2"
+  ],
+  "entry_title": "Proposition~\\ref{prop:triple} (partial splits)",
+  "heading": "subsubsection",
+  "doc": "Proposition 5.2 (partial splits)",
+  "file": [
+   "PartialSplits.lean"
+  ],
+  "decls": [
+   "Stemma.PSplit",
+   "Stemma.overlapCompat",
+   "Stemma.Extends",
+   "Stemma.JointPair",
+   "Stemma.pair_exact",
+   "Stemma.triple_pairwise",
+   "Stemma.triple_not_joint",
+   "Stemma.four_nontrivial_full"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.PSplit",
+     "as_written": "PSplit",
+     "keyword": "structure",
+     "source": "PartialSplits.lean"
+    },
+    {
+     "name": "Stemma.overlapCompat",
+     "as_written": "overlapCompat",
+     "keyword": "def",
+     "source": "PartialSplits.lean"
+    },
+    {
+     "name": "Stemma.Extends",
+     "as_written": "Extends",
+     "keyword": "def",
+     "source": "PartialSplits.lean"
+    },
+    {
+     "name": "Stemma.JointPair",
+     "as_written": "JointPair",
+     "keyword": "def",
+     "source": "PartialSplits.lean"
+    },
+    {
+     "name": "Stemma.pair_exact",
+     "as_written": "pair_exact",
+     "keyword": "theorem",
+     "source": "PartialSplits.lean"
+    },
+    {
+     "name": "Stemma.triple_pairwise",
+     "as_written": "triple_pairwise",
+     "keyword": "theorem",
+     "source": "PartialSplits.lean"
+    },
+    {
+     "name": "Stemma.triple_not_joint",
+     "as_written": "triple_not_joint",
+     "keyword": "theorem",
+     "source": "PartialSplits.lean"
+    },
+    {
+     "name": "Stemma.four_nontrivial_full",
+     "as_written": "four_nontrivial_full",
+     "keyword": "theorem",
+     "source": "PartialSplits.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "thm:cutting",
+  "labels": [
+   "thm:cutting"
+  ],
+  "report_number": "5.3",
+  "report_numbers": [
+   "5.3"
+  ],
+  "entry_title": "Theorem~\\ref{thm:cutting} (cutting planes)",
+  "heading": "subsubsection",
+  "doc": "Theorem 5.3 (cutting planes)",
+  "file": [
+   "CuttingPlanes.lean"
+  ],
+  "decls": [
+   "Stemma.CuttingPlanes.relaxation",
+   "Stemma.CuttingPlanes.exists_masterOpt",
+   "Stemma.CuttingPlanes.cutting_correct",
+   "Stemma.CuttingPlanes.new_cut",
+   "Stemma.CuttingPlanes.cutting_terminates"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.CuttingPlanes.relaxation",
+     "as_written": "relaxation",
+     "keyword": "theorem",
+     "source": "CuttingPlanes.lean"
+    },
+    {
+     "name": "Stemma.CuttingPlanes.exists_masterOpt",
+     "as_written": "exists_masterOpt",
+     "keyword": "theorem",
+     "source": "CuttingPlanes.lean"
+    },
+    {
+     "name": "Stemma.CuttingPlanes.cutting_correct",
+     "as_written": "cutting_correct",
+     "keyword": "theorem",
+     "source": "CuttingPlanes.lean"
+    },
+    {
+     "name": "Stemma.CuttingPlanes.new_cut",
+     "as_written": "new_cut",
+     "keyword": "theorem",
+     "source": "CuttingPlanes.lean"
+    },
+    {
+     "name": "Stemma.CuttingPlanes.cutting_terminates",
+     "as_written": "cutting_terminates",
+     "keyword": "theorem",
+     "source": "CuttingPlanes.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "lem:hall",
+  "labels": [
+   "lem:hall"
+  ],
+  "report_number": "6.1",
+  "report_numbers": [
+   "6.1"
+  ],
+  "entry_title": "Lemma~\\ref{lem:hall} (displacement matching)",
+  "heading": "subsubsection",
+  "doc": "Lemma 6.1 (displacement matching)",
+  "file": [
+   "Splits.lean"
+  ],
+  "decls": [
+   "Stemma.Splits.displacement_matching"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Splits.displacement_matching",
+     "as_written": "displacement_matching",
+     "keyword": "theorem",
+     "source": "Splits.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "thm:local",
+  "labels": [
+   "thm:local",
+   "thm:global"
+  ],
+  "report_number": "6.2",
+  "report_numbers": [
+   "6.2",
+   "6.3"
+  ],
+  "entry_title": "Theorems~\\ref{thm:local} and~\\ref{thm:global} (separation)",
+  "heading": "subsubsection",
+  "doc": "Theorems 6.2 and 6.3 (separation)",
+  "file": [
+   "Splits.lean"
+  ],
+  "decls": [
+   "Stemma.Splits.local_separation",
+   "Stemma.Splits.local_separation_strong",
+   "Stemma.Splits.global_separation"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Splits.local_separation",
+     "as_written": "local_separation",
+     "keyword": "theorem",
+     "source": "Splits.lean"
+    },
+    {
+     "name": "Stemma.Splits.local_separation_strong",
+     "as_written": "local_separation_strong",
+     "keyword": "theorem",
+     "source": "Splits.lean"
+    },
+    {
+     "name": "Stemma.Splits.global_separation",
+     "as_written": "global_separation",
+     "keyword": "theorem",
+     "source": "Splits.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:threshold",
+  "labels": [
+   "prop:threshold"
+  ],
+  "report_number": "6.9",
+  "report_numbers": [
+   "6.9"
+  ],
+  "entry_title": "Proposition~\\ref{prop:threshold} (non-binary threshold)",
+  "heading": "subsubsection",
+  "doc": "Proposition 6.9 (non-binary threshold)",
+  "file": [
+   "Splits.lean"
+  ],
+  "decls": [
+   "Stemma.Splits.threshold"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Splits.threshold",
+     "as_written": "threshold",
+     "keyword": "theorem",
+     "source": "Splits.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:rooted",
+  "labels": [
+   "prop:rooted"
+  ],
+  "report_number": "6.10",
+  "report_numbers": [
+   "6.10"
+  ],
+  "entry_title": "Proposition~\\ref{prop:rooted} (rooted analogue)",
+  "heading": "subsubsection",
+  "doc": "Proposition 6.10 (rooted analogue)",
+  "file": [
+   "Rooted.lean"
+  ],
+  "decls": [
+   "Stemma.Rooted.card_le_rooted",
+   "Stemma.Rooted.maximal_rooted",
+   "Stemma.Rooted.displacement_matching_rooted",
+   "Stemma.Rooted.local_separation_rooted",
+   "Stemma.Rooted.global_separation_rooted"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Rooted.card_le_rooted",
+     "as_written": "card_le_rooted",
+     "keyword": "theorem",
+     "source": "Rooted.lean"
+    },
+    {
+     "name": "Stemma.Rooted.maximal_rooted",
+     "as_written": "maximal_rooted",
+     "keyword": "theorem",
+     "source": "Rooted.lean"
+    },
+    {
+     "name": "Stemma.Rooted.displacement_matching_rooted",
+     "as_written": "displacement_matching_rooted",
+     "keyword": "theorem",
+     "source": "Rooted.lean"
+    },
+    {
+     "name": "Stemma.Rooted.local_separation_rooted",
+     "as_written": "local_separation_rooted",
+     "keyword": "theorem",
+     "source": "Rooted.lean"
+    },
+    {
+     "name": "Stemma.Rooted.global_separation_rooted",
+     "as_written": "global_separation_rooted",
+     "keyword": "theorem",
+     "source": "Rooted.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:rooted",
+  "labels": [
+   "prop:rooted"
+  ],
+  "report_number": "6.10",
+  "report_numbers": [
+   "6.10"
+  ],
+  "entry_title": "Proposition~\\ref{prop:rooted}: the margin and consistency for clusters",
+  "heading": "subsubsection",
+  "doc": "Proposition 6.10: the margin and consistency for clusters",
+  "file": [
+   "RootedConsistency.lean"
+  ],
+  "decls": [
+   "Stemma.RootedConsistency.consistency_rooted",
+   "Stemma.RootedConsistency.computing_gamma_rooted"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.RootedConsistency.consistency_rooted",
+     "as_written": "consistency_rooted",
+     "keyword": "theorem",
+     "source": "RootedConsistency.lean"
+    },
+    {
+     "name": "Stemma.RootedConsistency.computing_gamma_rooted",
+     "as_written": "computing_gamma_rooted",
+     "keyword": "theorem",
+     "source": "RootedConsistency.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:rooted",
+  "labels": [
+   "prop:rooted"
+  ],
+  "report_number": "6.10",
+  "report_numbers": [
+   "6.10"
+  ],
+  "entry_title": "Proposition~\\ref{prop:rooted}: binary rooted stemmata as binary trees with an outgroup",
+  "heading": "subsubsection",
+  "doc": "Proposition 6.10: binary rooted stemmata as binary trees with an outgroup",
+  "file": [
+   "Rooted.lean",
+   "BinaryTree.lean"
+  ],
+  "decls": [
+   "Stemma.Rooted.outg",
+   "Stemma.Rooted.nontriv_outg",
+   "Stemma.Rooted.compat_outg",
+   "Stemma.Rooted.isBinR_iff_outgroup",
+   "Stemma.BinaryTree.isBinR_iff_rooted_tree"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Rooted.outg",
+     "as_written": "outg",
+     "keyword": "def",
+     "source": "Rooted.lean"
+    },
+    {
+     "name": "Stemma.Rooted.nontriv_outg",
+     "as_written": "nontriv_outg",
+     "keyword": "lemma",
+     "source": "Rooted.lean"
+    },
+    {
+     "name": "Stemma.Rooted.compat_outg",
+     "as_written": "compat_outg",
+     "keyword": "lemma",
+     "source": "Rooted.lean"
+    },
+    {
+     "name": "Stemma.Rooted.isBinR_iff_outgroup",
+     "as_written": "isBinR_iff_outgroup",
+     "keyword": "theorem",
+     "source": "Rooted.lean"
+    },
+    {
+     "name": "Stemma.BinaryTree.isBinR_iff_rooted_tree",
+     "as_written": "isBinR_iff_rooted_tree",
+     "keyword": "theorem",
+     "source": "BinaryTree.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "thm:pairwise",
+  "labels": [
+   "thm:pairwise"
+  ],
+  "report_number": "7.1",
+  "report_numbers": [
+   "7.1"
+  ],
+  "entry_title": "Theorem~\\ref{thm:pairwise} (pairwise bound)",
+  "heading": "subsubsection",
+  "doc": "Theorem 7.1 (pairwise bound)",
+  "file": [
+   "Chernoff.lean"
+  ],
+  "decls": [
+   "Stemma.Chernoff.pairwise_bound"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Chernoff.pairwise_bound",
+     "as_written": "pairwise_bound",
+     "keyword": "theorem",
+     "source": "Chernoff.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "lem:gamma",
+  "labels": [
+   "lem:gamma"
+  ],
+  "report_number": "7.3",
+  "report_numbers": [
+   "7.3"
+  ],
+  "entry_title": "Lemma~\\ref{lem:gamma} (computing $\\gamma$)",
+  "heading": "subsubsection",
+  "doc": "Lemma 7.3 (computing $\\gamma$)",
+  "file": [
+   "Margin.lean"
+  ],
+  "decls": [
+   "Stemma.Margin.computing_gamma",
+   "Stemma.Margin.margin_gap"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Margin.computing_gamma",
+     "as_written": "computing_gamma",
+     "keyword": "theorem",
+     "source": "Margin.lean"
+    },
+    {
+     "name": "Stemma.Margin.margin_gap",
+     "as_written": "margin_gap",
+     "keyword": "lemma",
+     "source": "Margin.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "lem:gamma",
+  "labels": [
+   "lem:gamma"
+  ],
+  "report_number": "7.3",
+  "report_numbers": [
+   "7.3"
+  ],
+  "entry_title": "Lemma~\\ref{lem:gamma}: the bracket $[-1,1]$ and the bisection",
+  "heading": "subsubsection",
+  "doc": "Lemma 7.3: the bracket $[-1,1]$ and the bisection",
+  "file": [
+   "Margin.lean"
+  ],
+  "decls": [
+   "Stemma.Margin.margin_mem_Icc",
+   "Stemma.Margin.bisect",
+   "Stemma.Margin.bisect_spec",
+   "Stemma.Margin.bisect_error"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Margin.margin_mem_Icc",
+     "as_written": "margin_mem_Icc",
+     "keyword": "theorem",
+     "source": "Margin.lean"
+    },
+    {
+     "name": "Stemma.Margin.bisect",
+     "as_written": "bisect",
+     "keyword": "def",
+     "source": "Margin.lean"
+    },
+    {
+     "name": "Stemma.Margin.bisect_spec",
+     "as_written": "bisect_spec",
+     "keyword": "theorem",
+     "source": "Margin.lean"
+    },
+    {
+     "name": "Stemma.Margin.bisect_error",
+     "as_written": "bisect_error",
+     "keyword": "theorem",
+     "source": "Margin.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "thm:consistency",
+  "labels": [
+   "thm:consistency"
+  ],
+  "report_number": "7.4",
+  "report_numbers": [
+   "7.4"
+  ],
+  "entry_title": "Theorem~\\ref{thm:consistency}(a), Hoeffding form",
+  "heading": "subsubsection",
+  "doc": "Theorem 7.4(a), Hoeffding form",
+  "file": [
+   "Consistency.lean"
+  ],
+  "decls": [
+   "Stemma.Consistency.consistency"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Consistency.consistency",
+     "as_written": "consistency",
+     "keyword": "theorem",
+     "source": "Consistency.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "thm:consistency",
+  "labels": [
+   "thm:consistency"
+  ],
+  "report_number": "7.4",
+  "report_numbers": [
+   "7.4"
+  ],
+  "entry_title": "Theorem~\\ref{thm:consistency}(a), Bernstein form",
+  "heading": "subsubsection",
+  "doc": "Theorem 7.4(a), Bernstein form",
+  "file": [
+   "Bernstein.lean"
+  ],
+  "decls": [
+   "Stemma.Bernstein.bernstein_two",
+   "Stemma.Bernstein.consistency_bernstein"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Bernstein.bernstein_two",
+     "as_written": "bernstein_two",
+     "keyword": "theorem",
+     "source": "Bernstein.lean"
+    },
+    {
+     "name": "Stemma.Bernstein.consistency_bernstein",
+     "as_written": "consistency_bernstein",
+     "keyword": "theorem",
+     "source": "Bernstein.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "thm:consistency",
+  "labels": [
+   "thm:consistency"
+  ],
+  "report_number": "7.4",
+  "report_numbers": [
+   "7.4"
+  ],
+  "entry_title": "Theorem~\\ref{thm:consistency}(b) (inconsistency)",
+  "heading": "subsubsection",
+  "doc": "Theorem 7.4(b) (inconsistency)",
+  "file": [
+   "Margin.lean"
+  ],
+  "decls": [
+   "Stemma.Margin.inconsistency"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Margin.inconsistency",
+     "as_written": "inconsistency",
+     "keyword": "theorem",
+     "source": "Margin.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "cor:samplesize",
+  "labels": [
+   "cor:samplesize"
+  ],
+  "report_number": "7.6",
+  "report_numbers": [
+   "7.6"
+  ],
+  "entry_title": "Corollary~\\ref{cor:samplesize} (sample size)",
+  "heading": "subsubsection",
+  "doc": "Corollary 7.6 (sample size)",
+  "file": [
+   "Margin.lean"
+  ],
+  "decls": [
+   "Stemma.Margin.sample_size"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Margin.sample_size",
+     "as_written": "sample_size",
+     "keyword": "theorem",
+     "source": "Margin.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:blocks",
+  "labels": [
+   "prop:blocks"
+  ],
+  "report_number": "7.8",
+  "report_numbers": [
+   "7.8"
+  ],
+  "entry_title": "Proposition~\\ref{prop:blocks} (dependent blocks)",
+  "heading": "subsubsection",
+  "doc": "Proposition 7.8 (dependent blocks)",
+  "file": [
+   "Blocks.lean"
+  ],
+  "decls": [
+   "Stemma.Blocks.dependent_blocks"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Blocks.dependent_blocks",
+     "as_written": "dependent_blocks",
+     "keyword": "theorem",
+     "source": "Blocks.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "thm:gammaconf",
+  "labels": [
+   "thm:gammaconf"
+  ],
+  "report_number": "7.9",
+  "report_numbers": [
+   "7.9"
+  ],
+  "entry_title": "Theorem~\\ref{thm:gammaconf} (confidence bound for the margin)",
+  "heading": "subsubsection",
+  "doc": "Theorem 7.9 (confidence bound for the margin)",
+  "file": [
+   "GammaConf.lean"
+  ],
+  "decls": [
+   "Stemma.GammaConf.gamma_confidence"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.GammaConf.gamma_confidence",
+     "as_written": "gamma_confidence",
+     "keyword": "theorem",
+     "source": "GammaConf.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "thm:gammaconf",
+  "labels": [
+   "thm:gammaconf"
+  ],
+  "report_number": "7.9",
+  "report_numbers": [
+   "7.9"
+  ],
+  "entry_title": "Theorem~\\ref{thm:gammaconf}, Clopper--Pearson coverage",
+  "heading": "subsubsection",
+  "doc": "Theorem 7.9, Clopper–Pearson coverage",
+  "file": [
+   "ClopperPearson.lean"
+  ],
+  "decls": [
+   "Stemma.ClopperPearson.binomial_law",
+   "Stemma.ClopperPearson.cpUpper_coverage",
+   "Stemma.ClopperPearson.cpLower_coverage",
+   "Stemma.ClopperPearson.gamma_confidence_cp"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.ClopperPearson.binomial_law",
+     "as_written": "binomial_law",
+     "keyword": "theorem",
+     "source": "ClopperPearson.lean"
+    },
+    {
+     "name": "Stemma.ClopperPearson.cpUpper_coverage",
+     "as_written": "cpUpper_coverage",
+     "keyword": "theorem",
+     "source": "ClopperPearson.lean"
+    },
+    {
+     "name": "Stemma.ClopperPearson.cpLower_coverage",
+     "as_written": "cpLower_coverage",
+     "keyword": "theorem",
+     "source": "ClopperPearson.lean"
+    },
+    {
+     "name": "Stemma.ClopperPearson.gamma_confidence_cp",
+     "as_written": "gamma_confidence_cp",
+     "keyword": "theorem",
+     "source": "ClopperPearson.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:gammablocks",
+  "labels": [
+   "prop:gammablocks"
+  ],
+  "report_number": "7.11",
+  "report_numbers": [
+   "7.11"
+  ],
+  "entry_title": "Proposition~\\ref{prop:gammablocks} (certifying the margin with dependent units)",
+  "heading": "subsubsection",
+  "doc": "Proposition 7.11 (certifying the margin with dependent units)",
+  "file": [
+   "GammaBlocks.lean"
+  ],
+  "decls": [
+   "Stemma.GammaBlocks.radius",
+   "Stemma.GammaBlocks.gamma_confidence_blocks"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.GammaBlocks.radius",
+     "as_written": "radius",
+     "keyword": "def",
+     "source": "GammaBlocks.lean"
+    },
+    {
+     "name": "Stemma.GammaBlocks.gamma_confidence_blocks",
+     "as_written": "gamma_confidence_blocks",
+     "keyword": "theorem",
+     "source": "GammaBlocks.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "thm:fragmentary",
+  "labels": [
+   "thm:fragmentary"
+  ],
+  "report_number": "7.12",
+  "report_numbers": [
+   "7.12"
+  ],
+  "entry_title": "Theorem~\\ref{thm:fragmentary} (fragmentary witnesses)",
+  "heading": "subsubsection",
+  "doc": "Theorem 7.12 (fragmentary witnesses)",
+  "file": [
+   "Fragmentary.lean"
+  ],
+  "decls": [
+   "Stemma.Fragmentary.restr_lower",
+   "Stemma.Fragmentary.restr_upper",
+   "Stemma.Fragmentary.fragmentary_margin_pos"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Fragmentary.restr_lower",
+     "as_written": "restr_lower",
+     "keyword": "theorem",
+     "source": "Fragmentary.lean"
+    },
+    {
+     "name": "Stemma.Fragmentary.restr_upper",
+     "as_written": "restr_upper",
+     "keyword": "theorem",
+     "source": "Fragmentary.lean"
+    },
+    {
+     "name": "Stemma.Fragmentary.fragmentary_margin_pos",
+     "as_written": "fragmentary_margin_pos",
+     "keyword": "theorem",
+     "source": "Fragmentary.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "thm:fragmentary",
+  "labels": [
+   "thm:fragmentary"
+  ],
+  "report_number": "7.12",
+  "report_numbers": [
+   "7.12"
+  ],
+  "entry_title": "Theorem~\\ref{thm:fragmentary} (fragmentary witnesses), many units",
+  "heading": "subsubsection",
+  "doc": "Theorem 7.12 (fragmentary witnesses), many units",
+  "file": [
+   "FragmentaryUnits.lean"
+  ],
+  "decls": [
+   "Stemma.FragmentaryUnits.iIndep_Y",
+   "Stemma.FragmentaryUnits.integral_Y",
+   "Stemma.FragmentaryUnits.fragmentary_consistency",
+   "Stemma.FragmentaryUnits.fragmentary_consistent"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.FragmentaryUnits.iIndep_Y",
+     "as_written": "iIndep_Y",
+     "keyword": "lemma",
+     "source": "FragmentaryUnits.lean"
+    },
+    {
+     "name": "Stemma.FragmentaryUnits.integral_Y",
+     "as_written": "integral_Y",
+     "keyword": "lemma",
+     "source": "FragmentaryUnits.lean"
+    },
+    {
+     "name": "Stemma.FragmentaryUnits.fragmentary_consistency",
+     "as_written": "fragmentary_consistency",
+     "keyword": "theorem",
+     "source": "FragmentaryUnits.lean"
+    },
+    {
+     "name": "Stemma.FragmentaryUnits.fragmentary_consistent",
+     "as_written": "fragmentary_consistent",
+     "keyword": "theorem",
+     "source": "FragmentaryUnits.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "thm:fragmentary",
+  "labels": [
+   "thm:fragmentary",
+   "thm:consistency"
+  ],
+  "report_number": "7.12",
+  "report_numbers": [
+   "7.12",
+   "7.4"
+  ],
+  "entry_title": "Theorem~\\ref{thm:fragmentary}(a): all of Theorem~\\ref{thm:consistency} for $\\tilde m$",
+  "heading": "subsubsection",
+  "doc": "Theorem 7.12(a): all of Theorem 7.4 for $\\tilde m$",
+  "file": [
+   "FragmentaryUnits.lean"
+  ],
+  "decls": [
+   "Stemma.FragmentaryUnits.fragmentary_consistency",
+   "Stemma.FragmentaryUnits.fragmentary_consistency_bernstein",
+   "Stemma.FragmentaryUnits.VN",
+   "Stemma.FragmentaryUnits.YN",
+   "Stemma.FragmentaryUnits.mtN",
+   "Stemma.FragmentaryUnits.pairwise_YN",
+   "Stemma.FragmentaryUnits.ident_YN",
+   "Stemma.FragmentaryUnits.integral_YN",
+   "Stemma.FragmentaryUnits.fragmentary_inconsistency"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.FragmentaryUnits.fragmentary_consistency",
+     "as_written": "fragmentary_consistency",
+     "keyword": "theorem",
+     "source": "FragmentaryUnits.lean"
+    },
+    {
+     "name": "Stemma.FragmentaryUnits.fragmentary_consistency_bernstein",
+     "as_written": "fragmentary_consistency_bernstein",
+     "keyword": "theorem",
+     "source": "FragmentaryUnits.lean"
+    },
+    {
+     "name": "Stemma.FragmentaryUnits.VN",
+     "as_written": "VN",
+     "keyword": "def",
+     "source": "FragmentaryUnits.lean"
+    },
+    {
+     "name": "Stemma.FragmentaryUnits.YN",
+     "as_written": "YN",
+     "keyword": "def",
+     "source": "FragmentaryUnits.lean"
+    },
+    {
+     "name": "Stemma.FragmentaryUnits.mtN",
+     "as_written": "mtN",
+     "keyword": "def",
+     "source": "FragmentaryUnits.lean"
+    },
+    {
+     "name": "Stemma.FragmentaryUnits.pairwise_YN",
+     "as_written": "pairwise_YN",
+     "keyword": "lemma",
+     "source": "FragmentaryUnits.lean"
+    },
+    {
+     "name": "Stemma.FragmentaryUnits.ident_YN",
+     "as_written": "ident_YN",
+     "keyword": "lemma",
+     "source": "FragmentaryUnits.lean"
+    },
+    {
+     "name": "Stemma.FragmentaryUnits.integral_YN",
+     "as_written": "integral_YN",
+     "keyword": "lemma",
+     "source": "FragmentaryUnits.lean"
+    },
+    {
+     "name": "Stemma.FragmentaryUnits.fragmentary_inconsistency",
+     "as_written": "fragmentary_inconsistency",
+     "keyword": "theorem",
+     "source": "FragmentaryUnits.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:textillegible",
+  "labels": [
+   "prop:textillegible"
+  ],
+  "report_number": "7.13",
+  "report_numbers": [
+   "7.13"
+  ],
+  "entry_title": "Proposition~\\ref{prop:textillegible} (illegibility that depends on the text)",
+  "heading": "subsubsection",
+  "doc": "Proposition 7.13 (illegibility that depends on the text)",
+  "file": [
+   "TextIllegible.lean"
+  ],
+  "decls": [
+   "Stemma.TextIllegible.CondIllegible",
+   "Stemma.TextIllegible.restr_lower",
+   "Stemma.TextIllegible.restr_upper",
+   "Stemma.TextIllegible.margin_pos",
+   "Stemma.TextIllegible.cutting_illegible_margin"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.TextIllegible.CondIllegible",
+     "as_written": "CondIllegible",
+     "keyword": "def",
+     "source": "TextIllegible.lean"
+    },
+    {
+     "name": "Stemma.TextIllegible.restr_lower",
+     "as_written": "restr_lower",
+     "keyword": "theorem",
+     "source": "TextIllegible.lean"
+    },
+    {
+     "name": "Stemma.TextIllegible.restr_upper",
+     "as_written": "restr_upper",
+     "keyword": "theorem",
+     "source": "TextIllegible.lean"
+    },
+    {
+     "name": "Stemma.TextIllegible.margin_pos",
+     "as_written": "margin_pos",
+     "keyword": "theorem",
+     "source": "TextIllegible.lean"
+    },
+    {
+     "name": "Stemma.TextIllegible.cutting_illegible_margin",
+     "as_written": "cutting_illegible_margin",
+     "keyword": "theorem",
+     "source": "TextIllegible.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "thm:cuttingconsistency",
+  "labels": [
+   "thm:cuttingconsistency"
+  ],
+  "report_number": "7.14",
+  "report_numbers": [
+   "7.14"
+  ],
+  "entry_title": "Theorem~\\ref{thm:cuttingconsistency}(a) and (b) (cutting-plane estimator)",
+  "heading": "subsubsection",
+  "doc": "Theorem 7.14(a) and (b) (cutting-plane estimator)",
+  "file": [
+   "Cutting.lean",
+   "Resolve.lean"
+  ],
+  "decls": [
+   "Stemma.Cutting.completable_of_displayed",
+   "Stemma.Cutting.completable_iff_displayed",
+   "Stemma.Resolve.completable_iff_displayed'",
+   "Stemma.Cutting.estimator_is_display_max",
+   "Stemma.Cutting.cutting_consistent",
+   "Stemma.Cutting.cutting_inconsistent"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Cutting.completable_of_displayed",
+     "as_written": "completable_of_displayed",
+     "keyword": "theorem",
+     "source": "Cutting.lean"
+    },
+    {
+     "name": "Stemma.Cutting.completable_iff_displayed",
+     "as_written": "completable_iff_displayed",
+     "keyword": "theorem",
+     "source": "Cutting.lean"
+    },
+    {
+     "name": "Stemma.Resolve.completable_iff_displayed'",
+     "as_written": "completable_iff_displayed'",
+     "keyword": "theorem",
+     "source": "Resolve.lean"
+    },
+    {
+     "name": "Stemma.Cutting.estimator_is_display_max",
+     "as_written": "estimator_is_display_max",
+     "keyword": "theorem",
+     "source": "Cutting.lean"
+    },
+    {
+     "name": "Stemma.Cutting.cutting_consistent",
+     "as_written": "cutting_consistent",
+     "keyword": "theorem",
+     "source": "Cutting.lean"
+    },
+    {
+     "name": "Stemma.Cutting.cutting_inconsistent",
+     "as_written": "cutting_inconsistent",
+     "keyword": "theorem",
+     "source": "Cutting.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "thm:cuttingconsistency",
+  "labels": [
+   "thm:cuttingconsistency"
+  ],
+  "report_number": "7.14",
+  "report_numbers": [
+   "7.14"
+  ],
+  "entry_title": "Theorem~\\ref{thm:cuttingconsistency}(b): the closing remark on splits with $m_\\sigma=0$",
+  "heading": "subsubsection",
+  "doc": "Theorem 7.14(b): the closing remark on splits with $m_\\sigma=0$",
+  "file": [
+   "CuttingRemark.lean"
+  ],
+  "decls": [
+   "Stemma.CuttingRemark.displayed_without_proposal",
+   "Stemma.CuttingRemark.Full",
+   "Stemma.CuttingRemark.observed_in_full",
+   "Stemma.CuttingRemark.all_observed_in_full"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.CuttingRemark.displayed_without_proposal",
+     "as_written": "displayed_without_proposal",
+     "keyword": "theorem",
+     "source": "CuttingRemark.lean"
+    },
+    {
+     "name": "Stemma.CuttingRemark.Full",
+     "as_written": "Full",
+     "keyword": "def",
+     "source": "CuttingRemark.lean"
+    },
+    {
+     "name": "Stemma.CuttingRemark.observed_in_full",
+     "as_written": "observed_in_full",
+     "keyword": "theorem",
+     "source": "CuttingRemark.lean"
+    },
+    {
+     "name": "Stemma.CuttingRemark.all_observed_in_full",
+     "as_written": "all_observed_in_full",
+     "keyword": "theorem",
+     "source": "CuttingRemark.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "thm:cuttingconsistency",
+  "labels": [
+   "thm:cuttingconsistency"
+  ],
+  "report_number": "7.14",
+  "report_numbers": [
+   "7.14"
+  ],
+  "entry_title": "Theorem~\\ref{thm:cuttingconsistency}(c) (illegible witnesses)",
+  "heading": "subsubsection",
+  "doc": "Theorem 7.14(c) (illegible witnesses)",
+  "file": [
+   "CuttingIllegible.lean"
+  ],
+  "decls": [
+   "Stemma.CuttingIllegible.M_lower",
+   "Stemma.CuttingIllegible.M_upper",
+   "Stemma.CuttingIllegible.M_eq",
+   "Stemma.CuttingIllegible.cutting_illegible",
+   "Stemma.CuttingIllegible.cutting_illegible_margin",
+   "Stemma.CuttingIllegible.cutting_illegible_consistent"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.CuttingIllegible.M_lower",
+     "as_written": "M_lower",
+     "keyword": "theorem",
+     "source": "CuttingIllegible.lean"
+    },
+    {
+     "name": "Stemma.CuttingIllegible.M_upper",
+     "as_written": "M_upper",
+     "keyword": "theorem",
+     "source": "CuttingIllegible.lean"
+    },
+    {
+     "name": "Stemma.CuttingIllegible.M_eq",
+     "as_written": "M_eq",
+     "keyword": "lemma",
+     "source": "CuttingIllegible.lean"
+    },
+    {
+     "name": "Stemma.CuttingIllegible.cutting_illegible",
+     "as_written": "cutting_illegible",
+     "keyword": "theorem",
+     "source": "CuttingIllegible.lean"
+    },
+    {
+     "name": "Stemma.CuttingIllegible.cutting_illegible_margin",
+     "as_written": "cutting_illegible_margin",
+     "keyword": "theorem",
+     "source": "CuttingIllegible.lean"
+    },
+    {
+     "name": "Stemma.CuttingIllegible.cutting_illegible_consistent",
+     "as_written": "cutting_illegible_consistent",
+     "keyword": "theorem",
+     "source": "CuttingIllegible.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:dimfree",
+  "labels": [
+   "prop:dimfree"
+  ],
+  "report_number": "7.15",
+  "report_numbers": [
+   "7.15"
+  ],
+  "entry_title": "Proposition~\\ref{prop:dimfree} (a tolerance independent of the number of witnesses)",
+  "heading": "subsubsection",
+  "doc": "Proposition 7.15 (a tolerance independent of the number of witnesses)",
+  "file": [
+   "CuttingDimFree.lean"
+  ],
+  "decls": [
+   "Stemma.CuttingDimFree.four_parts",
+   "Stemma.CuttingDimFree.DisplayEvent",
+   "Stemma.CuttingDimFree.display_prob_le",
+   "Stemma.CuttingDimFree.display_prob_le_text",
+   "Stemma.CuttingDimFree.cutting_dimfree",
+   "Stemma.CuttingDimFree.cutting_dimfree_margin",
+   "Stemma.CuttingDimFree.cutting_text_margin"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.CuttingDimFree.four_parts",
+     "as_written": "four_parts",
+     "keyword": "theorem",
+     "source": "CuttingDimFree.lean"
+    },
+    {
+     "name": "Stemma.CuttingDimFree.DisplayEvent",
+     "as_written": "DisplayEvent",
+     "keyword": "def",
+     "source": "CuttingDimFree.lean"
+    },
+    {
+     "name": "Stemma.CuttingDimFree.display_prob_le",
+     "as_written": "display_prob_le",
+     "keyword": "theorem",
+     "source": "CuttingDimFree.lean"
+    },
+    {
+     "name": "Stemma.CuttingDimFree.display_prob_le_text",
+     "as_written": "display_prob_le_text",
+     "keyword": "theorem",
+     "source": "CuttingDimFree.lean"
+    },
+    {
+     "name": "Stemma.CuttingDimFree.cutting_dimfree",
+     "as_written": "cutting_dimfree",
+     "keyword": "theorem",
+     "source": "CuttingDimFree.lean"
+    },
+    {
+     "name": "Stemma.CuttingDimFree.cutting_dimfree_margin",
+     "as_written": "cutting_dimfree_margin",
+     "keyword": "theorem",
+     "source": "CuttingDimFree.lean"
+    },
+    {
+     "name": "Stemma.CuttingDimFree.cutting_text_margin",
+     "as_written": "cutting_text_margin",
+     "keyword": "theorem",
+     "source": "CuttingDimFree.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:bediereffect",
+  "labels": [
+   "prop:bediereffect"
+  ],
+  "report_number": "8.1",
+  "report_numbers": [
+   "8.1"
+  ],
+  "entry_title": "Proposition~\\ref{prop:bediereffect} (Bédier effect)",
+  "heading": "subsubsection",
+  "doc": "Proposition 8.1 (Bédier effect)",
+  "file": [
+   "Polytomy.lean",
+   "Basic.lean",
+   "Consistency.lean"
+  ],
+  "decls": [
+   "Stemma.bedier_core",
+   "Stemma.Consistency.bedier_probability",
+   "Stemma.Polytomy.bedier_effect",
+   "Stemma.Polytomy.polytomy_split"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.bedier_core",
+     "as_written": "bedier_core",
+     "keyword": "theorem",
+     "source": "Basic.lean"
+    },
+    {
+     "name": "Stemma.Consistency.bedier_probability",
+     "as_written": "bedier_probability",
+     "keyword": "theorem",
+     "source": "Consistency.lean"
+    },
+    {
+     "name": "Stemma.Polytomy.bedier_effect",
+     "as_written": "bedier_effect",
+     "keyword": "theorem",
+     "source": "Polytomy.lean"
+    },
+    {
+     "name": "Stemma.Polytomy.polytomy_split",
+     "as_written": "polytomy_split",
+     "keyword": "theorem",
+     "source": "Polytomy.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:bediereffect",
+  "labels": [
+   "prop:bediereffect"
+  ],
+  "report_number": "8.1",
+  "report_numbers": [
+   "8.1"
+  ],
+  "entry_title": "Proposition~\\ref{prop:bediereffect}, positivity",
+  "heading": "subsubsection",
+  "doc": "Proposition 8.1, positivity",
+  "file": [
+   "Attraction.lean"
+  ],
+  "decls": [
+   "Stemma.Attraction.polytomy_support_pos"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Attraction.polytomy_support_pos",
+     "as_written": "polytomy_support_pos",
+     "keyword": "theorem",
+     "source": "Attraction.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:bediereffect",
+  "labels": [
+   "prop:bediereffect"
+  ],
+  "report_number": "8.1",
+  "report_numbers": [
+   "8.1"
+  ],
+  "entry_title": "Proposition~\\ref{prop:bediereffect}, positivity, with the size conditions",
+  "heading": "subsubsection",
+  "doc": "Proposition 8.1, positivity, with the size conditions",
+  "file": [
+   "Attraction.lean"
+  ],
+  "decls": [
+   "Stemma.Attraction.polytomy_support_pos_nt"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Attraction.polytomy_support_pos_nt",
+     "as_written": "polytomy_support_pos_nt",
+     "keyword": "theorem",
+     "source": "Attraction.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "cor:tops",
+  "labels": [
+   "cor:tops"
+  ],
+  "report_number": "8.2",
+  "report_numbers": [
+   "8.2"
+  ],
+  "entry_title": "Corollary~\\ref{cor:tops} (polytomies that survive)",
+  "heading": "subsubsection",
+  "doc": "Corollary 8.2 (polytomies that survive)",
+  "file": [
+   "RootedTop.lean"
+  ],
+  "decls": [
+   "Stemma.RootedTop.top_union",
+   "Stemma.RootedTop.union_weight_nonpos",
+   "Stemma.RootedTop.two_branched_top",
+   "Stemma.RootedTop.rooted_bedier_effect",
+   "Stemma.RootedTop.rooted_bedier_true"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.RootedTop.top_union",
+     "as_written": "top_union",
+     "keyword": "theorem",
+     "source": "RootedTop.lean"
+    },
+    {
+     "name": "Stemma.RootedTop.union_weight_nonpos",
+     "as_written": "union_weight_nonpos",
+     "keyword": "theorem",
+     "source": "RootedTop.lean"
+    },
+    {
+     "name": "Stemma.RootedTop.two_branched_top",
+     "as_written": "two_branched_top",
+     "keyword": "theorem",
+     "source": "RootedTop.lean"
+    },
+    {
+     "name": "Stemma.RootedTop.rooted_bedier_effect",
+     "as_written": "rooted_bedier_effect",
+     "keyword": "theorem",
+     "source": "RootedTop.lean"
+    },
+    {
+     "name": "Stemma.RootedTop.rooted_bedier_true",
+     "as_written": "rooted_bedier_true",
+     "keyword": "theorem",
+     "source": "RootedTop.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "thm:bedier",
+  "labels": [
+   "thm:bedier"
+  ],
+  "report_number": "8.3",
+  "report_numbers": [
+   "8.3"
+  ],
+  "entry_title": "Theorem~\\ref{thm:bedier} (Bédier threshold)",
+  "heading": "subsubsection",
+  "doc": "Theorem 8.3 (Bédier threshold)",
+  "file": [
+   "Chernoff.lean"
+  ],
+  "decls": [
+   "Stemma.Chernoff.bedier_threshold",
+   "Stemma.Chernoff.bedier_threshold_simple"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Chernoff.bedier_threshold",
+     "as_written": "bedier_threshold",
+     "keyword": "theorem",
+     "source": "Chernoff.lean"
+    },
+    {
+     "name": "Stemma.Chernoff.bedier_threshold_simple",
+     "as_written": "bedier_threshold_simple",
+     "keyword": "theorem",
+     "source": "Chernoff.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "thm:bedier",
+  "labels": [
+   "thm:bedier"
+  ],
+  "report_number": "8.3",
+  "report_numbers": [
+   "8.3"
+  ],
+  "entry_title": "Theorem~\\ref{thm:bedier}, Kullback--Leibler form, terms of rate $1$ omitted",
+  "heading": "subsubsection",
+  "doc": "Theorem 8.3, Kullback–Leibler form, terms of rate $1$ omitted",
+  "file": [
+   "Chernoff.lean"
+  ],
+  "decls": [
+   "Stemma.Chernoff.bedier_threshold_kl"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Chernoff.bedier_threshold_kl",
+     "as_written": "bedier_threshold_kl",
+     "keyword": "theorem",
+     "source": "Chernoff.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:gap",
+  "labels": [
+   "prop:gap"
+  ],
+  "report_number": "8.4",
+  "report_numbers": [
+   "8.4"
+  ],
+  "entry_title": "Proposition~\\ref{prop:gap} (largest-gap threshold)",
+  "heading": "subsubsection",
+  "doc": "Proposition 8.4 (largest-gap threshold)",
+  "file": [
+   "GapThreshold.lean"
+  ],
+  "decls": [
+   "Stemma.GapThreshold.gap_separation",
+   "Stemma.GapThreshold.gap_threshold"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.GapThreshold.gap_separation",
+     "as_written": "gap_separation",
+     "keyword": "theorem",
+     "source": "GapThreshold.lean"
+    },
+    {
+     "name": "Stemma.GapThreshold.gap_threshold",
+     "as_written": "gap_threshold",
+     "keyword": "theorem",
+     "source": "GapThreshold.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:rival",
+  "labels": [
+   "prop:rival"
+  ],
+  "report_number": "8.5",
+  "report_numbers": [
+   "8.5"
+  ],
+  "entry_title": "Proposition~\\ref{prop:rival} (rival test)",
+  "heading": "subsubsection",
+  "doc": "Proposition 8.5 (rival test)",
+  "file": [
+   "Rival.lean"
+  ],
+  "decls": [
+   "Stemma.Rival.cnt",
+   "Stemma.Rival.prob",
+   "Stemma.Rival.rival",
+   "Stemma.Rival.rival_null",
+   "Stemma.Rival.rival_binomial"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Rival.cnt",
+     "as_written": "cnt",
+     "keyword": "def",
+     "source": "Rival.lean"
+    },
+    {
+     "name": "Stemma.Rival.prob",
+     "as_written": "prob",
+     "keyword": "def",
+     "source": "Rival.lean"
+    },
+    {
+     "name": "Stemma.Rival.rival",
+     "as_written": "rival",
+     "keyword": "theorem",
+     "source": "Rival.lean"
+    },
+    {
+     "name": "Stemma.Rival.rival_null",
+     "as_written": "rival_null",
+     "keyword": "theorem",
+     "source": "Rival.lean"
+    },
+    {
+     "name": "Stemma.Rival.rival_binomial",
+     "as_written": "rival_binomial",
+     "keyword": "theorem",
+     "source": "Rival.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:rival",
+  "labels": [
+   "prop:rival"
+  ],
+  "report_number": "8.5",
+  "report_numbers": [
+   "8.5"
+  ],
+  "entry_title": "Proposition~\\ref{prop:rival}: the tail probability, the test's $p$-value",
+  "heading": "subsubsection",
+  "doc": "Proposition 8.5: the tail probability, the test's $p$-value",
+  "file": [
+   "Rival.lean"
+  ],
+  "decls": [
+   "Stemma.Rival.prob_ge_eq_sum",
+   "Stemma.Rival.rival_tail",
+   "Stemma.Rival.rival_tail_null"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Rival.prob_ge_eq_sum",
+     "as_written": "prob_ge_eq_sum",
+     "keyword": "lemma",
+     "source": "Rival.lean"
+    },
+    {
+     "name": "Stemma.Rival.rival_tail",
+     "as_written": "rival_tail",
+     "keyword": "theorem",
+     "source": "Rival.lean"
+    },
+    {
+     "name": "Stemma.Rival.rival_tail_null",
+     "as_written": "rival_tail_null",
+     "keyword": "theorem",
+     "source": "Rival.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "thm:mechanisms",
+  "labels": [
+   "thm:mechanisms"
+  ],
+  "report_number": "8.7",
+  "report_numbers": [
+   "8.7"
+  ],
+  "entry_title": "Theorem~\\ref{thm:mechanisms} (mechanisms of false support), (i)--(iii)",
+  "heading": "subsubsection",
+  "doc": "Theorem 8.7 (mechanisms of false support), (i)–(iii)",
+  "file": [
+   "Mechanisms.lean"
+  ],
+  "decls": [
+   "Stemma.Mechanisms.single",
+   "Stemma.Mechanisms.retention_coincidence",
+   "Stemma.Mechanisms.overwrite"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Mechanisms.single",
+     "as_written": "single",
+     "keyword": "theorem",
+     "source": "Mechanisms.lean"
+    },
+    {
+     "name": "Stemma.Mechanisms.retention_coincidence",
+     "as_written": "retention_coincidence",
+     "keyword": "theorem",
+     "source": "Mechanisms.lean"
+    },
+    {
+     "name": "Stemma.Mechanisms.overwrite",
+     "as_written": "overwrite",
+     "keyword": "theorem",
+     "source": "Mechanisms.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "thm:mechanisms",
+  "labels": [
+   "thm:mechanisms"
+  ],
+  "report_number": "8.7",
+  "report_numbers": [
+   "8.7"
+  ],
+  "entry_title": "Theorem~\\ref{thm:mechanisms}(ii)--(iii), with the size conditions of the report",
+  "heading": "subsubsection",
+  "doc": "Theorem 8.7(ii)–(iii), with the size conditions of the report",
+  "file": [
+   "Mechanisms.lean"
+  ],
+  "decls": [
+   "Stemma.Mechanisms.SplitNT",
+   "Stemma.Mechanisms.ClusterNT",
+   "Stemma.Mechanisms.retention_coincidence_report",
+   "Stemma.Mechanisms.overwrite_report"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Mechanisms.SplitNT",
+     "as_written": "SplitNT",
+     "keyword": "def",
+     "source": "Mechanisms.lean"
+    },
+    {
+     "name": "Stemma.Mechanisms.ClusterNT",
+     "as_written": "ClusterNT",
+     "keyword": "def",
+     "source": "Mechanisms.lean"
+    },
+    {
+     "name": "Stemma.Mechanisms.retention_coincidence_report",
+     "as_written": "retention_coincidence_report",
+     "keyword": "theorem",
+     "source": "Mechanisms.lean"
+    },
+    {
+     "name": "Stemma.Mechanisms.overwrite_report",
+     "as_written": "overwrite_report",
+     "keyword": "theorem",
+     "source": "Mechanisms.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "thm:mechanisms",
+  "labels": [
+   "thm:mechanisms"
+  ],
+  "report_number": "8.7",
+  "report_numbers": [
+   "8.7"
+  ],
+  "entry_title": "Theorem~\\ref{thm:mechanisms} (mechanisms of false support), the bounds",
+  "heading": "subsubsection",
+  "doc": "Theorem 8.7 (mechanisms of false support), the bounds",
+  "file": [
+   "Attraction.lean"
+  ],
+  "decls": [
+   "Stemma.Attraction.sum_wt_A",
+   "Stemma.Attraction.ex_split",
+   "Stemma.Attraction.P3_le",
+   "Stemma.Attraction.lambda_eq",
+   "Stemma.Attraction.omega_retention",
+   "Stemma.Attraction.omega_coincidence",
+   "Stemma.Attraction.omega_overwrite_rooted",
+   "Stemma.Attraction.omega_overwrite_unrooted"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Attraction.sum_wt_A",
+     "as_written": "sum_wt_A",
+     "keyword": "lemma",
+     "source": "Attraction.lean"
+    },
+    {
+     "name": "Stemma.Attraction.ex_split",
+     "as_written": "ex_split",
+     "keyword": "theorem",
+     "source": "Attraction.lean"
+    },
+    {
+     "name": "Stemma.Attraction.P3_le",
+     "as_written": "P3_le",
+     "keyword": "theorem",
+     "source": "Attraction.lean"
+    },
+    {
+     "name": "Stemma.Attraction.lambda_eq",
+     "as_written": "lambda_eq",
+     "keyword": "theorem",
+     "source": "Attraction.lean"
+    },
+    {
+     "name": "Stemma.Attraction.omega_retention",
+     "as_written": "omega_retention",
+     "keyword": "theorem",
+     "source": "Attraction.lean"
+    },
+    {
+     "name": "Stemma.Attraction.omega_coincidence",
+     "as_written": "omega_coincidence",
+     "keyword": "theorem",
+     "source": "Attraction.lean"
+    },
+    {
+     "name": "Stemma.Attraction.omega_overwrite_rooted",
+     "as_written": "omega_overwrite_rooted",
+     "keyword": "theorem",
+     "source": "Attraction.lean"
+    },
+    {
+     "name": "Stemma.Attraction.omega_overwrite_unrooted",
+     "as_written": "omega_overwrite_unrooted",
+     "keyword": "theorem",
+     "source": "Attraction.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "cor:dominance",
+  "labels": [
+   "cor:dominance"
+  ],
+  "report_number": "8.8",
+  "report_numbers": [
+   "8.8"
+  ],
+  "entry_title": "Corollary~\\ref{cor:dominance} (comparison of the codings)",
+  "heading": "subsubsection",
+  "doc": "Corollary 8.8 (comparison of the codings)",
+  "file": [
+   "Dominance.lean"
+  ],
+  "decls": [
+   "Stemma.Dominance.dominance",
+   "Stemma.Dominance.omega_dominance"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Dominance.dominance",
+     "as_written": "dominance",
+     "keyword": "theorem",
+     "source": "Dominance.lean"
+    },
+    {
+     "name": "Stemma.Dominance.omega_dominance",
+     "as_written": "omega_dominance",
+     "keyword": "theorem",
+     "source": "Dominance.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:modelbounds",
+  "labels": [
+   "prop:modelbounds",
+   "cor:modelglobal"
+  ],
+  "report_number": "8.10",
+  "report_numbers": [
+   "8.10",
+   "8.11"
+  ],
+  "entry_title": "Proposition~\\ref{prop:modelbounds} and Corollary~\\ref{cor:modelglobal} (irreversible model)",
+  "heading": "subsubsection",
+  "doc": "Proposition 8.11 and Corollary 8.10 (irreversible model)",
+  "file": [
+   "Irreversible.lean"
+  ],
+  "decls": [
+   "Stemma.Irreversible.suppI_edge_ge",
+   "Stemma.Irreversible.false_mass_sides",
+   "Stemma.Irreversible.model_global"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Irreversible.suppI_edge_ge",
+     "as_written": "suppI_edge_ge",
+     "keyword": "theorem",
+     "source": "Irreversible.lean"
+    },
+    {
+     "name": "Stemma.Irreversible.false_mass_sides",
+     "as_written": "false_mass_sides",
+     "keyword": "theorem",
+     "source": "Irreversible.lean"
+    },
+    {
+     "name": "Stemma.Irreversible.model_global",
+     "as_written": "model_global",
+     "keyword": "theorem",
+     "source": "Irreversible.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "thm:coding",
+  "labels": [
+   "thm:coding"
+  ],
+  "report_number": "8.14",
+  "report_numbers": [
+   "8.14"
+  ],
+  "entry_title": "Theorem~\\ref{thm:coding} (coding theorem)",
+  "heading": "subsubsection",
+  "doc": "Theorem 8.14 (coding theorem)",
+  "file": [
+   "Quartet.lean",
+   "CodingGen.lean",
+   "Coding.lean"
+  ],
+  "decls": [
+   "Stemma.Quartet.unrooted_false",
+   "Stemma.Quartet.rooted_false",
+   "Stemma.Coding.unrooted_consistent",
+   "Stemma.Coding.unrooted_inconsistent",
+   "Stemma.Coding.rooted_consistent",
+   "Stemma.Coding.rooted_inconsistent",
+   "Stemma.Coding.rooted_optimum_contains_13"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Quartet.unrooted_false",
+     "as_written": "unrooted_false",
+     "keyword": "theorem",
+     "source": "Quartet.lean"
+    },
+    {
+     "name": "Stemma.Quartet.rooted_false",
+     "as_written": "rooted_false",
+     "keyword": "theorem",
+     "source": "Quartet.lean"
+    },
+    {
+     "name": "Stemma.Coding.unrooted_consistent",
+     "as_written": "unrooted_consistent",
+     "keyword": "theorem",
+     "source": "Coding.lean"
+    },
+    {
+     "name": "Stemma.Coding.unrooted_inconsistent",
+     "as_written": "unrooted_inconsistent",
+     "keyword": "theorem",
+     "source": "Coding.lean"
+    },
+    {
+     "name": "Stemma.Coding.rooted_consistent",
+     "as_written": "rooted_consistent",
+     "keyword": "theorem",
+     "source": "Coding.lean"
+    },
+    {
+     "name": "Stemma.Coding.rooted_inconsistent",
+     "as_written": "rooted_inconsistent",
+     "keyword": "theorem",
+     "source": "Coding.lean"
+    },
+    {
+     "name": "Stemma.Coding.rooted_optimum_contains_13",
+     "as_written": "rooted_optimum_contains_13",
+     "keyword": "theorem",
+     "source": "Coding.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "thm:coding",
+  "labels": [
+   "thm:coding"
+  ],
+  "report_number": "8.14",
+  "report_numbers": [
+   "8.14"
+  ],
+  "entry_title": "Theorem~\\ref{thm:coding} (coding theorem), with the units",
+  "heading": "subsubsection",
+  "doc": "Theorem 8.14 (coding theorem), with the units",
+  "file": [
+   "CodingLimit.lean"
+  ],
+  "decls": [
+   "Stemma.CodingLimit.ae_eventually_lt",
+   "Stemma.CodingLimit.unrooted_consistency",
+   "Stemma.CodingLimit.unrooted_false_selected",
+   "Stemma.CodingLimit.rooted_consistency",
+   "Stemma.CodingLimit.rooted_inconsistency",
+   "Stemma.CodingLimit.rooted_selects_13"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.CodingLimit.ae_eventually_lt",
+     "as_written": "ae_eventually_lt",
+     "keyword": "theorem",
+     "source": "CodingLimit.lean"
+    },
+    {
+     "name": "Stemma.CodingLimit.unrooted_consistency",
+     "as_written": "unrooted_consistency",
+     "keyword": "theorem",
+     "source": "CodingLimit.lean"
+    },
+    {
+     "name": "Stemma.CodingLimit.unrooted_false_selected",
+     "as_written": "unrooted_false_selected",
+     "keyword": "theorem",
+     "source": "CodingLimit.lean"
+    },
+    {
+     "name": "Stemma.CodingLimit.rooted_consistency",
+     "as_written": "rooted_consistency",
+     "keyword": "theorem",
+     "source": "CodingLimit.lean"
+    },
+    {
+     "name": "Stemma.CodingLimit.rooted_inconsistency",
+     "as_written": "rooted_inconsistency",
+     "keyword": "theorem",
+     "source": "CodingLimit.lean"
+    },
+    {
+     "name": "Stemma.CodingLimit.rooted_selects_13",
+     "as_written": "rooted_selects_13",
+     "keyword": "theorem",
+     "source": "CodingLimit.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:drift",
+  "labels": [
+   "prop:drift"
+  ],
+  "report_number": "8.15",
+  "report_numbers": [
+   "8.15"
+  ],
+  "entry_title": "Proposition~\\ref{prop:drift} (drift towards the root)",
+  "heading": "subsubsection",
+  "doc": "Proposition 8.15 (drift towards the root)",
+  "file": [
+   "Drift.lean",
+   "DriftGen.lean"
+  ],
+  "decls": [
+   "Stemma.Drift.drift_unrooted_consistency",
+   "Stemma.Drift.drift_unrooted_false",
+   "Stemma.Drift.drift_rooted_consistency",
+   "Stemma.Drift.drift_rooted_false"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Drift.drift_unrooted_consistency",
+     "as_written": "drift_unrooted_consistency",
+     "keyword": "theorem",
+     "source": "Drift.lean"
+    },
+    {
+     "name": "Stemma.Drift.drift_unrooted_false",
+     "as_written": "drift_unrooted_false",
+     "keyword": "theorem",
+     "source": "Drift.lean"
+    },
+    {
+     "name": "Stemma.Drift.drift_rooted_consistency",
+     "as_written": "drift_rooted_consistency",
+     "keyword": "theorem",
+     "source": "Drift.lean"
+    },
+    {
+     "name": "Stemma.Drift.drift_rooted_false",
+     "as_written": "drift_rooted_false",
+     "keyword": "theorem",
+     "source": "Drift.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:tworeading",
+  "labels": [
+   "prop:tworeading"
+  ],
+  "report_number": "8.16",
+  "report_numbers": [
+   "8.16"
+  ],
+  "entry_title": "Proposition~\\ref{prop:tworeading} (two-reading coding)",
+  "heading": "subsubsection",
+  "doc": "Proposition 8.16 (two-reading coding)",
+  "file": [
+   "TwoReading.lean"
+  ],
+  "decls": [
+   "Stemma.TwoReading.closed_T12",
+   "Stemma.TwoReading.closed_T13",
+   "Stemma.TwoReading.closed_T14",
+   "Stemma.TwoReading.two_reading_consistent",
+   "Stemma.TwoReading.two_reading_inconsistent",
+   "Stemma.TwoReading.two_reading_consistency",
+   "Stemma.TwoReading.two_reading_false_selected",
+   "Stemma.TwoReading.two_reading_disjoint",
+   "Stemma.TwoReading.two_reading_nested",
+   "Stemma.TwoReading.two_reading_mechanisms"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.TwoReading.closed_T12",
+     "as_written": "closed_T12",
+     "keyword": "theorem",
+     "source": "TwoReading.lean"
+    },
+    {
+     "name": "Stemma.TwoReading.closed_T13",
+     "as_written": "closed_T13",
+     "keyword": "theorem",
+     "source": "TwoReading.lean"
+    },
+    {
+     "name": "Stemma.TwoReading.closed_T14",
+     "as_written": "closed_T14",
+     "keyword": "theorem",
+     "source": "TwoReading.lean"
+    },
+    {
+     "name": "Stemma.TwoReading.two_reading_consistent",
+     "as_written": "two_reading_consistent",
+     "keyword": "theorem",
+     "source": "TwoReading.lean"
+    },
+    {
+     "name": "Stemma.TwoReading.two_reading_inconsistent",
+     "as_written": "two_reading_inconsistent",
+     "keyword": "theorem",
+     "source": "TwoReading.lean"
+    },
+    {
+     "name": "Stemma.TwoReading.two_reading_consistency",
+     "as_written": "two_reading_consistency",
+     "keyword": "theorem",
+     "source": "TwoReading.lean"
+    },
+    {
+     "name": "Stemma.TwoReading.two_reading_false_selected",
+     "as_written": "two_reading_false_selected",
+     "keyword": "theorem",
+     "source": "TwoReading.lean"
+    },
+    {
+     "name": "Stemma.TwoReading.two_reading_disjoint",
+     "as_written": "two_reading_disjoint",
+     "keyword": "theorem",
+     "source": "TwoReading.lean"
+    },
+    {
+     "name": "Stemma.TwoReading.two_reading_nested",
+     "as_written": "two_reading_nested",
+     "keyword": "theorem",
+     "source": "TwoReading.lean"
+    },
+    {
+     "name": "Stemma.TwoReading.two_reading_mechanisms",
+     "as_written": "two_reading_mechanisms",
+     "keyword": "theorem",
+     "source": "TwoReading.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:multistate",
+  "labels": [
+   "prop:multistate"
+  ],
+  "report_number": "8.17",
+  "report_numbers": [
+   "8.17"
+  ],
+  "entry_title": "Proposition~\\ref{prop:multistate} (several attractive readings)",
+  "heading": "subsubsection",
+  "doc": "Proposition 8.17 (several attractive readings)",
+  "file": [
+   "MultiAttraction.lean"
+  ],
+  "decls": [
+   "Stemma.MultiAttraction.reduction",
+   "Stemma.MultiAttraction.lambdaG_PU",
+   "Stemma.MultiAttraction.lambdaG_PR",
+   "Stemma.MultiAttraction.transfer_PU",
+   "Stemma.MultiAttraction.transfer_PR",
+   "Stemma.MultiAttraction.transfer_cubic",
+   "Stemma.MultiAttraction.dominanceG"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.MultiAttraction.reduction",
+     "as_written": "reduction",
+     "keyword": "theorem",
+     "source": "MultiAttraction.lean"
+    },
+    {
+     "name": "Stemma.MultiAttraction.lambdaG_PU",
+     "as_written": "lambdaG_PU",
+     "keyword": "theorem",
+     "source": "MultiAttraction.lean"
+    },
+    {
+     "name": "Stemma.MultiAttraction.lambdaG_PR",
+     "as_written": "lambdaG_PR",
+     "keyword": "theorem",
+     "source": "MultiAttraction.lean"
+    },
+    {
+     "name": "Stemma.MultiAttraction.transfer_PU",
+     "as_written": "transfer_PU",
+     "keyword": "theorem",
+     "source": "MultiAttraction.lean"
+    },
+    {
+     "name": "Stemma.MultiAttraction.transfer_PR",
+     "as_written": "transfer_PR",
+     "keyword": "theorem",
+     "source": "MultiAttraction.lean"
+    },
+    {
+     "name": "Stemma.MultiAttraction.transfer_cubic",
+     "as_written": "transfer_cubic",
+     "keyword": "theorem",
+     "source": "MultiAttraction.lean"
+    },
+    {
+     "name": "Stemma.MultiAttraction.dominanceG",
+     "as_written": "dominanceG",
+     "keyword": "theorem",
+     "source": "MultiAttraction.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:alpha",
+  "labels": [
+   "prop:alpha"
+  ],
+  "report_number": "8.18",
+  "report_numbers": [
+   "8.18"
+  ],
+  "entry_title": "Proposition~\\ref{prop:alpha} (estimating $\\alpha$)",
+  "heading": "subsubsection",
+  "doc": "Proposition 8.18 (estimating $\\alpha$)",
+  "file": [
+   "Alpha.lean"
+  ],
+  "decls": [
+   "Stemma.Alpha.no_other",
+   "Stemma.Alpha.two_part",
+   "Stemma.Alpha.alpha_pair",
+   "Stemma.Alpha.alpha_pooled",
+   "Stemma.Alpha.ratio_tendsto",
+   "Stemma.Alpha.ratio_drop_empty"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Alpha.no_other",
+     "as_written": "no_other",
+     "keyword": "lemma",
+     "source": "Alpha.lean"
+    },
+    {
+     "name": "Stemma.Alpha.two_part",
+     "as_written": "two_part",
+     "keyword": "theorem",
+     "source": "Alpha.lean"
+    },
+    {
+     "name": "Stemma.Alpha.alpha_pair",
+     "as_written": "alpha_pair",
+     "keyword": "theorem",
+     "source": "Alpha.lean"
+    },
+    {
+     "name": "Stemma.Alpha.alpha_pooled",
+     "as_written": "alpha_pooled",
+     "keyword": "theorem",
+     "source": "Alpha.lean"
+    },
+    {
+     "name": "Stemma.Alpha.ratio_tendsto",
+     "as_written": "ratio_tendsto",
+     "keyword": "theorem",
+     "source": "Alpha.lean"
+    },
+    {
+     "name": "Stemma.Alpha.ratio_drop_empty",
+     "as_written": "ratio_drop_empty",
+     "keyword": "theorem",
+     "source": "Alpha.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:polytomynull",
+  "labels": [
+   "prop:polytomynull"
+  ],
+  "report_number": "8.19",
+  "report_numbers": [
+   "8.19"
+  ],
+  "entry_title": "Proposition~\\ref{prop:polytomynull} (coincidence null at a polytomy)",
+  "heading": "subsubsection",
+  "doc": "Proposition 8.19 (coincidence null at a polytomy)",
+  "file": [
+   "PolytomyNull.lean",
+   "PolytomyMix.lean"
+  ],
+  "decls": [
+   "Stemma.PolytomyNull.pair_cases",
+   "Stemma.PolytomyNull.lambda_null",
+   "Stemma.PolytomyNull.q_bound",
+   "Stemma.PolytomyNull.null_bound",
+   "Stemma.PolytomyMix.null_mixture"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.PolytomyNull.pair_cases",
+     "as_written": "pair_cases",
+     "keyword": "theorem",
+     "source": "PolytomyNull.lean"
+    },
+    {
+     "name": "Stemma.PolytomyNull.lambda_null",
+     "as_written": "lambda_null",
+     "keyword": "theorem",
+     "source": "PolytomyNull.lean"
+    },
+    {
+     "name": "Stemma.PolytomyNull.q_bound",
+     "as_written": "q_bound",
+     "keyword": "lemma",
+     "source": "PolytomyNull.lean"
+    },
+    {
+     "name": "Stemma.PolytomyNull.null_bound",
+     "as_written": "null_bound",
+     "keyword": "theorem",
+     "source": "PolytomyNull.lean"
+    },
+    {
+     "name": "Stemma.PolytomyMix.null_mixture",
+     "as_written": "null_mixture",
+     "keyword": "theorem",
+     "source": "PolytomyMix.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:quartet",
+  "labels": [
+   "prop:quartet"
+  ],
+  "report_number": "8.12",
+  "report_numbers": [
+   "8.12"
+  ],
+  "entry_title": "Proposition~\\ref{prop:quartet} (quartet)",
+  "heading": "subsubsection",
+  "doc": "Proposition 8.12 (quartet)",
+  "file": [
+   "Quartet.lean"
+  ],
+  "decls": [
+   "Stemma.Quartet.m12",
+   "Stemma.Quartet.m13",
+   "Stemma.Quartet.m14",
+   "Stemma.Quartet.long_branch"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Quartet.m12",
+     "as_written": "m12",
+     "keyword": "theorem",
+     "source": "Quartet.lean"
+    },
+    {
+     "name": "Stemma.Quartet.m13",
+     "as_written": "m13",
+     "keyword": "theorem",
+     "source": "Quartet.lean"
+    },
+    {
+     "name": "Stemma.Quartet.m14",
+     "as_written": "m14",
+     "keyword": "theorem",
+     "source": "Quartet.lean"
+    },
+    {
+     "name": "Stemma.Quartet.long_branch",
+     "as_written": "long_branch",
+     "keyword": "theorem",
+     "source": "Quartet.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "cor:lba",
+  "labels": [
+   "cor:lba"
+  ],
+  "report_number": "8.13",
+  "report_numbers": [
+   "8.13"
+  ],
+  "entry_title": "Corollary~\\ref{cor:lba} (textual long-branch zone), with the units",
+  "heading": "subsubsection",
+  "doc": "Corollary 8.13 (textual long-branch zone), with the units",
+  "file": [
+   "CodingLimit.lean"
+  ],
+  "decls": [
+   "Stemma.CodingLimit.quartet_consistency",
+   "Stemma.CodingLimit.quartet_false_selected",
+   "Stemma.CodingLimit.mQ",
+   "Stemma.CodingLimit.long_branch_consistent",
+   "Stemma.CodingLimit.long_branch_inconsistent"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.CodingLimit.quartet_consistency",
+     "as_written": "quartet_consistency",
+     "keyword": "theorem",
+     "source": "CodingLimit.lean"
+    },
+    {
+     "name": "Stemma.CodingLimit.quartet_false_selected",
+     "as_written": "quartet_false_selected",
+     "keyword": "theorem",
+     "source": "CodingLimit.lean"
+    },
+    {
+     "name": "Stemma.CodingLimit.mQ",
+     "as_written": "mQ",
+     "keyword": "def",
+     "source": "CodingLimit.lean"
+    },
+    {
+     "name": "Stemma.CodingLimit.long_branch_consistent",
+     "as_written": "long_branch_consistent",
+     "keyword": "theorem",
+     "source": "CodingLimit.lean"
+    },
+    {
+     "name": "Stemma.CodingLimit.long_branch_inconsistent",
+     "as_written": "long_branch_inconsistent",
+     "keyword": "theorem",
+     "source": "CodingLimit.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:size",
+  "labels": [
+   "prop:size"
+  ],
+  "report_number": "9.1",
+  "report_numbers": [
+   "9.1"
+  ],
+  "entry_title": "Proposition~\\ref{prop:size} (size)",
+  "heading": "subsubsection",
+  "doc": "Proposition 9.1 (size)",
+  "file": [
+   "Size.lean"
+  ],
+  "decls": [
+   "Stemma.Size.card_nontrivial",
+   "Stemma.Size.independent_le",
+   "Stemma.Size.completions_le"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Size.card_nontrivial",
+     "as_written": "card_nontrivial",
+     "keyword": "theorem",
+     "source": "Size.lean"
+    },
+    {
+     "name": "Stemma.Size.independent_le",
+     "as_written": "independent_le",
+     "keyword": "theorem",
+     "source": "Size.lean"
+    },
+    {
+     "name": "Stemma.Size.completions_le",
+     "as_written": "completions_le",
+     "keyword": "theorem",
+     "source": "Size.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:crossing",
+  "labels": [
+   "prop:crossing"
+  ],
+  "report_number": "9.2",
+  "report_numbers": [
+   "9.2"
+  ],
+  "entry_title": "Proposition~\\ref{prop:crossing} (crossing set)",
+  "heading": "subsubsection",
+  "doc": "Proposition 9.2 (crossing set)",
+  "file": [
+   "Crossing.lean"
+  ],
+  "decls": [
+   "Stemma.Crossing.mem_path_iff",
+   "Stemma.Crossing.crossing_iff",
+   "Stemma.Crossing.crossing_internal",
+   "Stemma.Crossing.crossing_path",
+   "Stemma.Crossing.crossing_nonempty"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Crossing.mem_path_iff",
+     "as_written": "mem_path_iff",
+     "keyword": "theorem",
+     "source": "Crossing.lean"
+    },
+    {
+     "name": "Stemma.Crossing.crossing_iff",
+     "as_written": "crossing_iff",
+     "keyword": "theorem",
+     "source": "Crossing.lean"
+    },
+    {
+     "name": "Stemma.Crossing.crossing_internal",
+     "as_written": "crossing_internal",
+     "keyword": "theorem",
+     "source": "Crossing.lean"
+    },
+    {
+     "name": "Stemma.Crossing.crossing_path",
+     "as_written": "crossing_path",
+     "keyword": "theorem",
+     "source": "Crossing.lean"
+    },
+    {
+     "name": "Stemma.Crossing.crossing_nonempty",
+     "as_written": "crossing_nonempty",
+     "keyword": "theorem",
+     "source": "Crossing.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:five",
+  "labels": [
+   "prop:five"
+  ],
+  "report_number": "9.3",
+  "report_numbers": [
+   "9.3"
+  ],
+  "entry_title": "Proposition~\\ref{prop:five} (five witnesses)",
+  "heading": "subsubsection",
+  "doc": "Proposition 9.3 (five witnesses)",
+  "file": [
+   "Five.lean"
+  ],
+  "decls": [
+   "Stemma.Five.pair_conflict_iff",
+   "Stemma.Five.five_splits_are_pairs",
+   "Stemma.Five.five_conflict_lineGraph",
+   "Stemma.Five.induced_lineGraph",
+   "Stemma.Five.induced_four_cycle",
+   "Stemma.Five.induced_five_cycle"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Five.pair_conflict_iff",
+     "as_written": "pair_conflict_iff",
+     "keyword": "theorem",
+     "source": "Five.lean"
+    },
+    {
+     "name": "Stemma.Five.five_splits_are_pairs",
+     "as_written": "five_splits_are_pairs",
+     "keyword": "theorem",
+     "source": "Five.lean"
+    },
+    {
+     "name": "Stemma.Five.five_conflict_lineGraph",
+     "as_written": "five_conflict_lineGraph",
+     "keyword": "theorem",
+     "source": "Five.lean"
+    },
+    {
+     "name": "Stemma.Five.induced_lineGraph",
+     "as_written": "induced_lineGraph",
+     "keyword": "theorem",
+     "source": "Five.lean"
+    },
+    {
+     "name": "Stemma.Five.induced_four_cycle",
+     "as_written": "induced_four_cycle",
+     "keyword": "theorem",
+     "source": "Five.lean"
+    },
+    {
+     "name": "Stemma.Five.induced_five_cycle",
+     "as_written": "induced_five_cycle",
+     "keyword": "theorem",
+     "source": "Five.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "prop:five",
+  "labels": [
+   "prop:five"
+  ],
+  "report_number": "9.3",
+  "report_numbers": [
+   "9.3"
+  ],
+  "entry_title": "Proposition~\\ref{prop:five}: neither chordal nor perfect",
+  "heading": "subsubsection",
+  "doc": "Proposition 9.3: neither chordal nor perfect",
+  "file": [
+   "Five.lean"
+  ],
+  "decls": [
+   "Stemma.Five.IsInducedCycle",
+   "Stemma.Five.Chordal",
+   "Stemma.Five.Perfect",
+   "Stemma.Five.not_chordal_of_four_cycle",
+   "Stemma.Five.not_perfect_of_five_cycle",
+   "Stemma.Five.conflictGraph",
+   "Stemma.Five.conflict_not_chordal",
+   "Stemma.Five.conflict_not_perfect",
+   "Stemma.Five.card_conflict_five"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Five.IsInducedCycle",
+     "as_written": "IsInducedCycle",
+     "keyword": "def",
+     "source": "Five.lean"
+    },
+    {
+     "name": "Stemma.Five.Chordal",
+     "as_written": "Chordal",
+     "keyword": "def",
+     "source": "Five.lean"
+    },
+    {
+     "name": "Stemma.Five.Perfect",
+     "as_written": "Perfect",
+     "keyword": "def",
+     "source": "Five.lean"
+    },
+    {
+     "name": "Stemma.Five.not_chordal_of_four_cycle",
+     "as_written": "not_chordal_of_four_cycle",
+     "keyword": "theorem",
+     "source": "Five.lean"
+    },
+    {
+     "name": "Stemma.Five.not_perfect_of_five_cycle",
+     "as_written": "not_perfect_of_five_cycle",
+     "keyword": "theorem",
+     "source": "Five.lean"
+    },
+    {
+     "name": "Stemma.Five.conflictGraph",
+     "as_written": "conflictGraph",
+     "keyword": "def",
+     "source": "Five.lean"
+    },
+    {
+     "name": "Stemma.Five.conflict_not_chordal",
+     "as_written": "conflict_not_chordal",
+     "keyword": "theorem",
+     "source": "Five.lean"
+    },
+    {
+     "name": "Stemma.Five.conflict_not_perfect",
+     "as_written": "conflict_not_perfect",
+     "keyword": "theorem",
+     "source": "Five.lean"
+    },
+    {
+     "name": "Stemma.Five.card_conflict_five",
+     "as_written": "card_conflict_five",
+     "keyword": "theorem",
+     "source": "Five.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "thm:fpt",
+  "labels": [
+   "thm:fpt"
+  ],
+  "report_number": "9.4",
+  "report_numbers": [
+   "9.4"
+  ],
+  "entry_title": "Theorem~\\ref{thm:fpt} (dynamic programme)",
+  "heading": "subsubsection",
+  "doc": "Theorem 9.4 (dynamic programme)",
+  "file": [
+   "Dynamic.lean"
+  ],
+  "decls": [
+   "Stemma.Dynamic.opt_rec_F",
+   "Stemma.Dynamic.opt_rec_P",
+   "Stemma.Dynamic.dp_unique",
+   "Stemma.Dynamic.dp_correct"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Dynamic.opt_rec_F",
+     "as_written": "opt_rec_F",
+     "keyword": "theorem",
+     "source": "Dynamic.lean"
+    },
+    {
+     "name": "Stemma.Dynamic.opt_rec_P",
+     "as_written": "opt_rec_P",
+     "keyword": "theorem",
+     "source": "Dynamic.lean"
+    },
+    {
+     "name": "Stemma.Dynamic.dp_unique",
+     "as_written": "dp_unique",
+     "keyword": "theorem",
+     "source": "Dynamic.lean"
+    },
+    {
+     "name": "Stemma.Dynamic.dp_correct",
+     "as_written": "dp_correct",
+     "keyword": "theorem",
+     "source": "Dynamic.lean"
+    }
+   ]
+  ]
+ },
+ {
+  "label": "thm:fpt",
+  "labels": [
+   "thm:fpt"
+  ],
+  "report_number": "9.4",
+  "report_numbers": [
+   "9.4"
+  ],
+  "entry_title": "Theorem~\\ref{thm:fpt}, the operation count",
+  "heading": "subsubsection",
+  "doc": "Theorem 9.4, the operation count",
+  "file": [
+   "Dynamic.lean"
+  ],
+  "decls": [
+   "Stemma.Dynamic.totalCost_le"
+  ],
+  "blocks": [
+   [
+    {
+     "name": "Stemma.Dynamic.totalCost_le",
+     "as_written": "totalCost_le",
+     "keyword": "theorem",
+     "source": "Dynamic.lean"
+    }
+   ]
+  ]
+ }
+]

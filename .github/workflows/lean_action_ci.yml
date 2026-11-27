@@ -1,0 +1,22 @@
+name: Lean Action CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: leanprover/lean-action@v1
+      - name: Axiom audit
+        run: lake env lean scripts/Audit.lean
+      - name: Statements.lean and statements.json are up to date
+        run: |
+          lake env lean scripts/ExtractStatements.lean
+          git diff --exit-code StemmaLean/Statements.lean statements.json

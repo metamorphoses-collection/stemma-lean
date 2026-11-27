@@ -1,0 +1,31 @@
+name = "stemma-lean"
+version = "0.1.0"
+keywords = ["math"]
+defaultTargets = ["StemmaLean"]
+
+[leanOptions]
+pp.unicode.fun = true # pretty-prints `fun a ↦ b`
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+maxSynthPendingDepth = 3
+
+
+[[lean_lib]]
+name = "StemmaLean"
+
+[[require]]
+name = "cslib-frontier"
+git = "https://github.com/cslib-community/cslib-frontier"
+rev = "358f5d1655a5f449094b36c9bb8f92dcb37b75a6"
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.36.0"
+
+# Used only by `leanblueprint checkdecls` (blueprint/), which checks that every
+# declaration named in the blueprint exists.
+[[require]]
+name = "checkdecls"
+git = "https://github.com/PatrickMassot/checkdecls.git"
+rev = "3d425859e73fcfbef85b9638c2a91708ef4a22d4"

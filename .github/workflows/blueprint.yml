@@ -1,0 +1,61 @@
+name: Blueprint
+
+# Builds the blueprint (blueprint/) and publishes blueprint/web on GitHub Pages:
+# https://metamorphoses-collection.github.io/stemma-lean/
+# Needs Pages enabled with "GitHub Actions" as the source (Settings > Pages).
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      # Builds the library; checkdecls below needs the compiled declarations.
+      - uses: leanprover/lean-action@v1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install graphviz and leanblueprint
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y graphviz libgraphviz-dev texlive-binaries  # kpsewhich: plasTeX resolves \input{macros/...} with it
+          pip install leanblueprint==0.0.20 plasTeX==3.1 plastexdepgraph==0.0.5 plastexshowmore==0.0.2
+
+      - name: Build the web blueprint
+        run: |
+          leanblueprint web
+          python3 blueprint/link_decls.py --commit "$GITHUB_SHA"
+
+      - name: Every Lean name in the blueprint exists
+        run: leanblueprint checkdecls
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: blueprint/web
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

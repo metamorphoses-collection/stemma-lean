@@ -1,0 +1,5 @@
+web/
+print/
+lean_decls
+src/*.paux
+__pycache__/
